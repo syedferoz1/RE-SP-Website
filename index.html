@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Springfield Properties | Authorized Seller for Godrej Woodscapes</title>
+<meta content="Discover premium living with Springfield Properties, your trusted real estate partner in Bengaluru. Explore Godrej Woodscapes at Budigere Cross." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "subtle-gray": "#E2E8F0",
+                        "slate-text": "#1A202C",
+                        "on-primary-fixed-variant": "#4b4822",
+                        "surface-tint": "#636037",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "warm-ivory": "#FDFBF0",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "inverse-primary": "#cdc897",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#735c00",
+                        "surface-variant": "#d5e5ef",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe088",
+                        "primary-fixed-dim": "#cdc897",
+                        "on-error-container": "#93000a",
+                        "primary": "#636037",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#fff9c4",
+                        "secondary-container": "#dfe0e0",
+                        "surface-bright": "#f4faff",
+                        "on-secondary-container": "#616363",
+                        "secondary-fixed": "#e2e2e2",
+                        "muted-gold": "#C5A028",
+                        "surface-container-highest": "#d5e5ef",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#e3f3fd",
+                        "on-primary": "#ffffff",
+                        "background": "#f4faff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#5d5f5f",
+                        "on-primary-fixed": "#1e1c00",
+                        "surface-container": "#e0f0fb",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#daebf5",
+                        "outline": "#7a776b",
+                        "inverse-surface": "#23323a",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#cac6b8",
+                        "on-surface-variant": "#49473c",
+                        "primary-fixed": "#eae4b1",
+                        "surface-dim": "#ccdce7",
+                        "tertiary-container": "#fff6e7",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#767248",
+                        "surface-container-low": "#e7f6ff",
+                        "surface": "#f4faff",
+                        "on-background": "#0e1d25",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-surface": "#0e1d25",
+                        "on-tertiary-container": "#8a6e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["League Spartan"],
+                        "headline-md": ["League Spartan"],
+                        "label-caps": ["League Spartan"],
+                        "headline-lg-mobile": ["League Spartan"],
+                        "display-lg": ["League Spartan"],
+                        "body-lg": ["League Spartan"],
+                        "body-md": ["League Spartan"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 40, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.6));
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C5A028;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .hover-lift {
+            transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .hover-lift:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1A202C;
+        }
+        .hero-carousel {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            will-change: opacity;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            z-index: 1000;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-card {
+            width: min(100%, 600px);
+            background: #ffffff;
+            border-radius: 1.25rem;
+            box-shadow: 0 40px 120px rgba(15, 23, 42, 0.25);
+            overflow: hidden;
+        }
+        .modal-card .modal-body {
+            padding: 2rem;
+        }
+        .modal-card .modal-body h2 {
+            margin-top: 0.5rem;
+        }
+        .modal-card .modal-body label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #334155;
+        }
+        .modal-card .modal-body input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.75rem;
+            padding: 1rem 1rem;
+            color: #0f172a;
+        }
+        .modal-card .modal-body button {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            font-size: 1.25rem;
+            color: #475569;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-warm-ivory text-slate-text font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/20" id="top-nav">
+<div class="flex items-center gap-4">
+<img alt="Springfield Properties Logo" class="w-auto object-contain h-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrldSXu2SLy_zIvI2n5BHsm_PAKBmdJ40vsklJ1LxZXA2fOqxqcdEqmyYtmDUXBHlulBvnDH_6kf7hQR3xEhzWlSk4De-hP3nPDsaA-anwgLrvlXXSVIeAoJw9O_Wqc4Pr4ma9Do6kGAXh8kjJ3igRd4PVH53-Iti_Djry572wqH67BEakExRFCTdT9YBHzlBy-McyyL2lxLgBHCljrWQYDMDUQR8SeNNmCK0GgSeEFX0LK2_NzS7-kRSipopNwWx6vYSysefYixA"/>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="nav-link font-label-caps text-label-caps text-muted-gold active" href="#">Home</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#about-partner">About Us</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#highlights">Highlights</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#location">Location</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#gallery">Gallery</a>
+</nav>
+<button class="open-modal-btn bg-slate-text text-white px-6 py-2 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">Request Brochure</button>
+</header>
+<div id="cta-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card relative">
+        <button type="button" class="modal-close close-modal" aria-label="Close popup">×</button>
+        <div id="modal-form-view" class="modal-body">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Request Brochure</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Get brochure and pricing</h2>
+            <p class="font-body-lg text-on-surface-variant mt-4 mb-8">Enter your details and our team will reach out to share the latest information.</p>
+            <form id="popup-form" class="grid gap-6">
+                <div class="flex flex-col gap-2">
+                    <label for="popup-name">Name</label>
+                    <input id="popup-name" name="name" type="text" placeholder="Your full name" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="popup-phone">Phone</label>
+                    <input id="popup-phone" name="phone" type="tel" placeholder="+91 00000 00000" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="popup-email">Email Address</label>
+                    <input id="popup-email" name="email" type="email" placeholder="your.email@example.com" required />
+                </div>
+                <button type="submit" class="bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Submit</button>
+            </form>
+        </div>
+        <div id="thankyou-view" class="modal-body hidden text-center">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Thank You</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Submission Received</h2>
+            <p class="font-body-lg text-on-surface-variant mt-4 mb-8">We appreciate your interest. Our team will contact you shortly with the details.</p>
+            <button type="button" class="close-modal bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Close</button>
+        </div>
+    </div>
+</div>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Hero Background Carousel -->
+<div class="video-container">
+    <div class="hero-carousel">
+        <div class="hero-slide active" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDM_SSnRGyKROsoCD1NtP-fkjuXkfPRYsl1aoUW-Om1EFLy_JEljOWqeW-CtdS52s7jj0X-7mOQlIF1wfYYT_H_DaPcmSmrDqC_Pe6eMR4WFauRUWuqmuq4OL0VoVVYwe4zg2hLpEar_ItsQccH4Ih6RNZbV6F_GHccQo5lEJTW404soH8RTJuAI1OAwmELLLZiQfD96a8DQRCBkoxf0KOdQRpI5t4fwqn1pUidziDt6kxVEyJlmNPE3qz9-oECy1zol3cxf2CoCIyx6ktlA6sD3osv11RxSQi6RdqwEwgTlql6Md-_E2VEbRIBiSWt793MNU9QeL2wxixZKXjc');"></div>
+        <div class="hero-slide" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4vGdUPRBaDNM8U4dPUjUPpRjG_X5mTC0PEucfGzpCx2mEAQ31mtVCGSxPi8OsClIFY-zYn8xhSSYthXtMWsUS8jPKNyb2T2VB-AsQOgPev69zGFSZ-u85dPktRxYW407ApzyHeLfkNGcm4yMSG1a12dpDaI6Qun_xVcKdJbd6FhjjU1vnTgF99Ux9wUaM5S81sxN9zlxBp93RF-OYy3JebYFrlFZhRhWDmT0AMtgWcSDNXuvfAic1IBRoAZHMK3S8w3xlejmnjro');"></div>
+        <div class="hero-slide" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkhno7ofmOmJS-2LSPDhrodRd0dUv4LPDx1zLTp1rheheK1mrb2VYIb7OMHcTB6gOCRNE1s2NpfQkwKE71IJma6oR3vu3DMKI1RO_NQBVLUGrbruC_CA--Jb7ab1XIfOPM8XBRwmud1UNnZc7rrLa8floXMChJw-f9mlv2FVJGjGHB0gPMZ0OFysQ9CY65YSiimvBHuU5d-UleSlseK9PfP0WkBA6XXrXwHGKV1qZnX6_F7Ki1sS5gJE58IJv-b0rsipXKkvt2aTE');"></div>
+    </div>
+    <div class="absolute inset-0 hero-gradient z-10"></div>
+</div>
+<div class="relative z-20 text-center px-4 max-w-5xl">
+<h1 class="font-display-lg text-display-lg text-white mb-6 reveal tracking-normal leading-[1.1]">Springfield Properties</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-10 reveal max-w-2xl mx-auto" style="transition-delay: 200ms;">Your premier gateway to luxury living at Godrej Woodscapes. Experience the perfect fusion of ease and sophistication at Budigere Cross.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center reveal" style="transition-delay: 400ms;">
+<button class="open-modal-btn bg-white text-slate-text px-10 py-4 font-label-caps text-label-caps hover:bg-muted-gold hover:text-white transition-all duration-300 shadow-xl">Explore Floor Plans</button>
+<button class="open-modal-btn border border-white text-white px-10 py-4 font-label-caps text-label-caps hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">Schedule Visit</button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
+<span class="material-symbols-outlined text-white text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Springfield Properties Introduction Section -->
+<section class="py-24 px-margin-desktop bg-surface-container/30 border-b border-outline-variant/10" id="about-partner">
+<div class="max-w-max-width mx-auto flex flex-col md:flex-row items-center gap-16 reveal">
+<div class="md:w-1/2">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em] mb-4 block">Your Trusted Partner</span>
+<h2 class="font-headline-lg text-headline-lg mb-6 leading-tight">Bengaluru's Premier Real Estate Experts</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                Springfield Properties stands as a leading 3rd-party property seller across Bengaluru, specializing in premium residential developments that redefine urban living. With years of expertise in the local real estate market, we bridge the gap between discerning homeowners and iconic addresses.
+            </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                As an <strong>authorized seller for Godrej Woodscapes</strong>, we provide exclusive insights, personalized site tours, and seamless end-to-end assistance to ensure you secure your dream home in this modern sanctuary at Budigere Cross.
+            </p>
+</div>
+<div class="md:w-1/2 grid grid-cols-2 gap-4">
+<div class="bg-white p-8 shadow-sm border border-outline-variant/20 hover-lift">
+<span class="material-symbols-outlined text-muted-gold text-4xl mb-4">verified</span>
+<h4 class="font-label-caps text-label-caps font-bold mb-2">Authorized Seller</h4>
+<p class="text-sm text-on-surface-variant">Direct channel partner for Godrej Properties.</p>
+</div>
+<div class="bg-white p-8 shadow-sm border border-outline-variant/20 hover-lift">
+<span class="material-symbols-outlined text-muted-gold text-4xl mb-4">apartment</span>
+<h4 class="font-label-caps text-label-caps font-bold mb-2">Premium Portfolio</h4>
+<p class="text-sm text-on-surface-variant">Curating only the finest residential assets.</p>
+</div>
+<div class="bg-white p-8 shadow-sm border border-outline-variant/20 hover-lift">
+<span class="material-symbols-outlined text-muted-gold text-4xl mb-4">groups</span>
+<h4 class="font-label-caps text-label-caps font-bold mb-2">Expert Advisors</h4>
+<p class="text-sm text-on-surface-variant">Professional guidance for your investment.</p>
+</div>
+<div class="bg-white p-8 shadow-sm border border-outline-variant/20 hover-lift">
+<span class="material-symbols-outlined text-muted-gold text-4xl mb-4">location_city</span>
+<h4 class="font-label-caps text-label-caps font-bold mb-2">Market Authority</h4>
+<p class="text-sm text-on-surface-variant">In-depth knowledge of Bengaluru's growth hubs.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Project Section -->
+<section class="py-32 px-margin-desktop bg-white" id="about-project">
+<div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 reveal">
+<div class="relative group">
+<div class="absolute -top-6 -left-6 w-full h-full border-2 border-muted-gold/20 -z-10 group-hover:top-0 group-hover:left-0 transition-all duration-500"></div>
+<img alt="A grand, architectural entrance of Godrej Woodscapes featuring high-quality stone masonry, integrated greenery with ivy and lush plants, and a sophisticated minimalist sign." class="w-full h-auto shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM_SSnRGyKROsoCD1NtP-fkjuXkfPRYsl1aoUW-Om1EFLy_JEljOWqeW-CtdS52s7jj0X-7mOQlIF1wfYYT_H_DaPcmSmrDqC_Pe6eMR4WFauRUWuqmuq4OL0VoVVbVFGGjlXY2tXMBTEVvGbvRIJe-glo5L1uqzYK0pDGmrgMRkE6gQVH8qkhIV2A9EmB5_n8cWa1zizPhXPpvpD8Z9kEGkQob0IcSJJtKc0yBBU5SkqPBuhfXaZ0PKjEAigYjWGKBabTBTRcYpA"/>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-8 reveal" style="transition-delay: 200ms;">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">The Destination</span>
+<h2 class="font-headline-lg text-headline-lg leading-tight">About Godrej Woodscapes</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Godrej Woodscapes at Budigere Cross is a groundbreaking 28.15-acre development at the lively intersection of Budigere Road and OMR. Perfectly positioned near major urban centers and IT corridors, Godrej Woodscapes transcends ordinary living to offer a modern lifestyle masterpiece.
+            </p>
+<div class="flex gap-12">
+<div>
+<span class="block font-headline-md text-headline-md text-muted-gold">28+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Acres of Land</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-muted-gold">85%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Open Spaces</span>
+</div>
+</div>
+<button class="open-modal-btn w-fit bg-slate-text text-white px-8 py-3 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">Request Details</button>
+</div>
+</div>
+</section>
+<!-- Highlights - Bento Grid -->
+<section class="py-32 bg-primary-container/20" id="highlights">
+<div class="px-margin-desktop max-w-max-width mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Distinction</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">Project Highlights</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
+<!-- Large Highlight -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden glass-card reveal hover-lift">
+<img alt="An expansive aerial view of the lush central park within Godrej Woodscapes." class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2iViYCnX_Tuwwl8EXV1Dax9qKy5s0slHW50OrNVxNymGHH67yZZkb46RlVWdxa69dt0coo9VsYamjdq9Ixq_cBoWxQMK_yxyZQuhdbiUHmsgyzIDNVPAHNZ9wvsV3w5TLIs32dTiSPM1zHAbkW8Sjef68bl1UZP7_DdKoTE0T92qfPB_HnGgYDWr2G_ILvPKLqcb_mlp3T-UvsXUgstTP3P-VEc8m1WiE6EjaT5EwNJy7uVLTk8-DNDDiFIvnHl0n10D1dpSbMQ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-text/90 to-transparent flex flex-col justify-end p-10 text-white z-10">
+<h3 class="font-headline-md text-headline-md mb-4">Discover The Splendor Of Central Park</h3>
+<p class="font-body-md opacity-80">Experience nature at its finest with expansive green landscapes designed for rejuvenation.</p>
+</div>
+</div>
+<!-- Secondary Highlights -->
+<div class="md:col-span-2 bg-white p-10 flex flex-col justify-center reveal hover-lift" style="transition-delay: 100ms;">
+<div class="flex items-start gap-4 mb-6">
+<span class="material-symbols-outlined text-muted-gold text-3xl">home_work</span>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">Opulent 68,000 Sqft Clubhouse</h4>
+<p class="font-body-md text-on-surface-variant">A G+3 level sanctuary for social engagement and fitness.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-muted-gold text-3xl">park</span>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">85% Open Green Spaces</h4>
+<p class="font-body-md text-on-surface-variant">A natural connection that transcends the hustle of the city.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-1 bg-muted-gold text-white p-10 flex flex-col justify-center text-center reveal hover-lift" style="transition-delay: 200ms;">
+<span class="font-headline-lg text-5xl mb-2">3L+</span>
+<p class="font-label-caps text-label-caps uppercase tracking-wider">Sqft Retail Amenities</p>
+</div>
+<div class="md:col-span-1 relative group overflow-hidden reveal hover-lift" style="transition-delay: 300ms;">
+<img alt="A modern jogging track weaving through a manicured garden setting." class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4vGdUPRBaDNM8U4dPUjUPpRjG_X5mTC0PEucfGzpCx2mEAQ31mtVCGSxPi8OsClIFY-zYn8xhSSYthXtMWsUS8jPKNyb2T2VB-AsQOgPev69zGFSZ-u85dPktRxYW407ApzyHeLfkNGcm4yMSG1a12dpDaI6Qun_xVcKdJbd6FhjjU1vnTgF99Ux9wUaM5S81sxN9zlxBp93RF-OYy3JebYFrlFZhRhWDmT0AMtgWcSDNXuvfAic1IBRoAZHMK3S8w3xlejmnjro"/>
+<div class="absolute inset-0 bg-slate-text/30 group-hover:bg-slate-text/10 transition-colors"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="font-label-caps text-label-caps">Wellness Focused</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Table -->
+<section class="py-32 px-margin-desktop bg-white">
+<div class="max-w-4xl mx-auto reveal">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Area &amp; Pricing</h2>
+<div class="overflow-hidden border border-outline-variant/30 rounded-xl hover:shadow-lg transition-shadow duration-500">
+<table class="w-full text-left">
+<thead class="bg-primary-container/30">
+<tr>
+<th class="px-8 py-6 font-label-caps text-label-caps text-slate-text uppercase">Unit Type</th>
+<th class="px-8 py-6 font-label-caps text-label-caps text-slate-text uppercase">Area</th>
+<th class="px-8 py-6 font-label-caps text-label-caps text-slate-text uppercase">Price Onward</th>
+<th class="px-8 py-6"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-warm-ivory transition-colors group">
+<td class="px-8 py-6 font-headline-md text-2xl group-hover:text-muted-gold transition-colors">3.5 BHK Luxe</td>
+<td class="px-8 py-6 font-body-lg">2787 sq.ft</td>
+<td class="px-8 py-6 font-body-lg text-muted-gold font-bold">₹ 2.79 Cr* +</td>
+<td class="px-8 py-6 text-right">
+<button class="text-slate-text font-label-caps text-label-caps border-b border-slate-text hover:text-muted-gold hover:border-muted-gold transition-all">Details</button>
+</td>
+</tr>
+<tr class="hover:bg-warm-ivory transition-colors group">
+<td class="px-8 py-6 font-headline-md text-2xl group-hover:text-muted-gold transition-colors">4 BHK</td>
+<td class="px-8 py-6 font-body-lg">3630 sq.ft</td>
+<td class="px-8 py-6 font-body-lg text-muted-gold font-bold">₹ 2.79 Cr* +</td>
+<td class="px-8 py-6 text-right">
+<button class="text-slate-text font-label-caps text-label-caps border-b border-slate-text hover:text-muted-gold hover:border-muted-gold transition-all">Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-center mt-8 text-on-surface-variant font-body-md italic">*All prices are subject to change and indicative of base cost only.</p>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-32 bg-slate-text text-white" id="gallery">
+<div class="px-margin-desktop max-w-max-width mx-auto">
+<div class="flex justify-between items-end mb-20 reveal">
+<div>
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Visual Journey</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">Project Gallery</h2>
+</div>
+<button class="border border-white/30 text-white px-8 py-3 font-label-caps text-label-caps hover:bg-white hover:text-slate-text transition-all duration-300">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 h-[500px] overflow-hidden reveal hover-lift">
+<img alt="A spacious, high-end living room at Godrej Woodscapes." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkhno7ofmOmJS-2LSPDhrodRd0dUv4LPDx1zLTp1rheheK1mrb2VYIb7OMHcTB6gOCRNE1s2NpfQkwKE71IJma6oR3vu3DMKI1RO_NQBVLUGrbruC_CA--Jb7ab1XIfOPM8XBRwmud1UNnZc7rrLa8floXMChJw-f9mlv2FVJGjGHB0gPMZ0OFysQ9CY65YSiimvBHuU5d-UleSlseK9PfP0WkBA6XXrXwHGKV1qZnX6_F7Ki1sS5gJE58IJv-b0rsipXKkvt2aTE"/>
+</div>
+<div class="md:col-span-4 h-[500px] overflow-hidden reveal hover-lift" style="transition-delay: 100ms;">
+<img alt="A contemporary designer kitchen." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAY78G3MLX6jtqJSKs--2jaL45Yim3PiPciZJcesKi3C5axOU5BcTgyVhEGCRp4Vxd5BI02yv_kWdtDvQv9WoDMBr0ZLLFAeWMUagOAcJBQGrcrGopjDZHKHEoNK_NaEqJ7RlqVY7pp49SIWHNXlTh60F5qY_PJ27ly-dBIFNqj6myGHaxagOWPphAltPnvnsugLoc6RIAV7zsPtlFU07bPtXsMhzbapdcnzGzbzev5S9jkziKhvgNLaOQXQehPq-doNcon16Vfq4"/>
+</div>
+<div class="md:col-span-4 h-[400px] overflow-hidden reveal hover-lift" style="transition-delay: 200ms;">
+<img alt="A master bedroom at Godrej Woodscapes." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcd1Ks6RsxLo4bKS0Dhg86HVYz1nnkoDAdXnKOckFQ5LVlgK0vsc9QHkKBW4GMV8Fe46mSrJr7unKRQy7Vco3g_DkL8Bv5FWZ1KcML9IwltbaCKJbDRjTh67LllL_y1eKSs07PP2S_E-1JmsN6azeE-YomZhqVs29wQf_YuOfLJF5lKelFOfEJHNWCn7ZWI1BTiIJrWSJH2Us2AN4cm_xt_QzljlDOtPXAY9ymF_JCBGF1Tlg0i32CHobCvHjnURDn3sHyHjNj4DA"/>
+</div>
+<div class="md:col-span-8 h-[400px] overflow-hidden reveal hover-lift" style="transition-delay: 300ms;">
+<img alt="Wide shot of the community landscaping." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4vGdUPRBaDNM8U4dPUjUPpRjG_X5mTC0PEucfGzpCx2mEAQ31mtVCGSxPi8OsClIFY-zYn8xhSSYthXtMWsUS8jPKNyb2T2VB-AsQOgPev69zGFSZ-u85dPktRxYW407ApzyHeLfkNGcm4yMSG1a12dpDaI6Qun_xVcKdJbd6FhjjU1vnTgF99Ux9wUaM5S81sxN9zlxBp93RF-OYy3JebYFrlFZhRhWDmT0AMtgWcSDNXuvfAic1IBRoAZHMK3S8w3xlejmnjro"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-32 px-margin-desktop bg-warm-ivory" id="location">
+<div class="max-w-max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+<div class="reveal">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Strategic Connectivity</span>
+<h2 class="font-headline-lg text-headline-lg mt-4 mb-8">Location Advantage</h2>
+<p class="font-body-lg text-body-lg mb-12 text-on-surface-variant">
+                Situated at the bustling intersection of Budigere Road and OMR, Godrej Woodscapes provides unparalleled access to major hubs while maintaining its serene sanctuary status.
+            </p>
+<div class="space-y-6">
+<div class="p-8 glass-card rounded-xl hover:shadow-xl transition-all duration-500">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-muted-gold">train</span>
+<h4 class="font-label-caps text-label-caps uppercase text-slate-text">Transit Hubs</h4>
+</div>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-muted-gold transition-colors">
+<span class="text-on-surface-variant">Whitefield Metro</span>
+<span class="font-bold">9.2 km</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-muted-gold transition-colors">
+<span class="text-on-surface-variant">Airport</span>
+<span class="font-bold">27 km</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-muted-gold transition-colors">
+<span class="text-on-surface-variant">Old Madras Road</span>
+<span class="font-bold">0 km</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-muted-gold transition-colors">
+<span class="text-on-surface-variant">Whitefield Railway</span>
+<span class="font-bold">7.3 km</span>
+</li>
+</ul>
+</div>
+<div class="p-8 glass-card rounded-xl hover:shadow-xl transition-all duration-500">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-muted-gold">school</span>
+<h4 class="font-label-caps text-label-caps uppercase text-slate-text">Education Hub</h4>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-container/40 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-muted-gold hover:text-white transition-colors cursor-default">VIBGYOR High</span>
+<span class="bg-primary-container/40 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-muted-gold hover:text-white transition-colors cursor-default">New Baldwin Int'l</span>
+<span class="bg-primary-container/40 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-muted-gold hover:text-white transition-colors cursor-default">Garden City University</span>
+<span class="bg-primary-container/40 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-muted-gold hover:text-white transition-colors cursor-default">DPS Whitefield</span>
+<span class="bg-primary-container/40 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-muted-gold hover:text-white transition-colors cursor-default">National Public School</span>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal lg:sticky lg:top-32" style="transition-delay: 300ms;">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl h-[600px] group">
+<img alt="A stylized map overlay showing Godrej Woodscapes' prime location." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM_SSnRGyKROsoCD1NtP-fkjuXkfPRYsl1aoUW-Om1EFLy_JEljOWqeW-CtdS52s7jj0X-7mOQlIF1wfYYT_H_DaPcmSmrDqC_Pe6eMR4WFauRUWuqmuq4OL0VoVVbVFGGjlXY2tXMBTEVvGbvRIJe-glo5L1uqzYK0pDGmrgMRkE6gQVH8qkhIV2A9EmB5_n8cWa1zizPhXPpvpD8Z9kEGkQob0IcSJJtKc0yBBU5SkqPBuhfXaZ0PKjEAigYjWGKBabTBTRcYpA"/>
+<div class="absolute inset-0 bg-slate-text/10 group-hover:bg-transparent transition-all duration-500"></div>
+<div class="absolute top-6 right-6 bg-white p-4 shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-muted-gold">pin_drop</span>
+<span class="font-label-caps text-label-caps text-slate-text">Budigere Cross, Bengaluru</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Site Visit Form -->
+<section class="py-32 px-margin-desktop bg-primary-container/10" id="contact">
+<div class="max-w-4xl mx-auto glass-card p-12 md:p-20 shadow-2xl reveal hover:shadow-3xl transition-shadow duration-500">
+<div class="text-center mb-12">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Contact Springfield Properties</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">Schedule a Private Tour</h2>
+<p class="font-body-lg text-on-surface-variant mt-4">Experience the splendor of Godrej Woodscapes with our experts.</p>
+</div>
+<form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-slate-text">Full Name</label>
+<input class="bg-transparent border-0 border-b border-outline hover:border-muted-gold focus:ring-0 focus:border-muted-gold transition-all py-3" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-slate-text">Email Address</label>
+<input class="bg-transparent border-0 border-b border-outline hover:border-muted-gold focus:ring-0 focus:border-muted-gold transition-all py-3" placeholder="john@example.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="font-label-caps text-label-caps text-slate-text">Phone Number</label>
+<input class="bg-transparent border-0 border-b border-outline hover:border-muted-gold focus:ring-0 focus:border-muted-gold transition-all py-3" placeholder="+91 00000 00000" type="tel"/>
+</div>
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-slate-text text-white py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-500 shadow-lg transform hover:-translate-y-1" type="submit">Confirm Appointment</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter items-start bg-warm-ivory border-t border-outline-variant/30">
+<div class="flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-slate-text tracking-tight">Springfield Properties</h3>
+<p class="font-body-md text-on-surface-variant opacity-90">Your trusted real estate partner in Bengaluru. Authorized channel sellers for Godrej Woodscapes.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-text hover:text-muted-gold cursor-pointer transition-colors p-2 hover:bg-muted-gold/10 rounded-full">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-text hover:text-muted-gold cursor-pointer transition-colors p-2 hover:bg-muted-gold/10 rounded-full">public</span>
+<span class="material-symbols-outlined text-slate-text hover:text-muted-gold cursor-pointer transition-colors p-2 hover:bg-muted-gold/10 rounded-full">link</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-slate-text uppercase mb-2">Quick Links</h4>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="#about-partner">About Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="#contact">Contact Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="#">Terms &amp; Conditions</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-slate-text uppercase mb-2">Contact</h4>
+<p class="font-body-md text-on-surface-variant mt-2">
+<span class="font-bold">Phone:</span> +91 7406925541
+        </p>
+</div>
+<div class="md:col-span-3 pt-12 mt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body-md text-on-surface-variant text-sm opacity-80">© 2026 Springfield Properties. All Rights Reserved.</p>
+<div class="flex gap-8">
+<img alt="Springfield Properties" class="h-8 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhQ6V6Pj-XMUEGADYPqrzTEEaR7NW9_nPOdcPjMhiAF0BujeP_E_S1SK9LyTaLiVO1PaY-21nJzPQY2qoOfbpRVcOpcdgcwgJeMPMP5zYAHZbW0p-wlVy6oBD2rQUakIW6paS8wiLG-RBjYjoL-CY33pjkRUlP4HsVEq6FozKKnszkgH91aKJMeRrcWDsZlKKl0_oHhxp95z46VeDP8pmHPmCBGZIJFhw-D25Yq9ekRbIjgIBaGbP2cR9HfBxkwYSmsS3dfIzYZwQ"/>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button class="fixed bottom-8 right-8 bg-slate-text text-white p-4 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-50 hover:bg-muted-gold transform hover:scale-110" id="backToTop">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+    // Scroll Reveal Animation
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    // Initial check
+    window.addEventListener("load", reveal);
+    reveal();
+
+    // Navbar Scroll Effect
+    const nav = document.getElementById('top-nav');
+    const backToTop = document.getElementById('backToTop');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.onscroll = function() {
+        if (window.pageYOffset > 50) {
+            nav.classList.add('py-4', 'shadow-lg');
+            nav.classList.remove('py-6');
+            backToTop.classList.remove('opacity-0', 'translate-y-10');
+            backToTop.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            nav.classList.remove('py-4', 'shadow-lg');
+            nav.classList.add('py-6');
+            backToTop.classList.add('opacity-0', 'translate-y-10');
+            backToTop.classList.remove('opacity-100', 'translate-y-0');
+        }
+
+        // Active Link Highlighting
+        let current = "";
+        const sections = document.querySelectorAll("section[id]");
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(current) && current !== "") {
+                link.classList.add("active");
+            }
+        });
+        if (pageYOffset < 300) {
+            navLinks[0].classList.add("active");
+        }
+    };
+
+    backToTop.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Hero background carousel playback
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let heroSlideIndex = 0;
+
+    function showHeroSlide(index) {
+        heroSlides.forEach((slide, idx) => {
+            slide.classList.toggle('active', idx === index);
+        });
+    }
+
+    if (heroSlides.length > 0) {
+        showHeroSlide(0);
+        setInterval(() => {
+            heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+            showHeroSlide(heroSlideIndex);
+        }, 5500);
+    }
+
+    const modal = document.getElementById('cta-modal');
+    const openModalButtons = document.querySelectorAll('.open-modal-btn');
+    const closeModalButtons = document.querySelectorAll('.close-modal');
+    const popupForm = document.getElementById('popup-form');
+    const modalFormView = document.getElementById('modal-form-view');
+    const thankyouView = document.getElementById('thankyou-view');
+
+    function toggleModal(show) {
+        if (!modal) return;
+        modal.classList.toggle('active', show);
+        modal.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (modalFormView && thankyouView) {
+                modalFormView.classList.remove('hidden');
+                thankyouView.classList.add('hidden');
+            }
+            toggleModal(true);
+        });
+    });
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => toggleModal(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            toggleModal(false);
+        }
+    });
+
+    if (popupForm) {
+        popupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (modalFormView && thankyouView) {
+                modalFormView.classList.add('hidden');
+                thankyouView.classList.remove('hidden');
+            }
+        });
+    }
+
+    // Smooth scroll for nav links
+    navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if(href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = targetId === "" ? document.body : document.getElementById(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body></html>
