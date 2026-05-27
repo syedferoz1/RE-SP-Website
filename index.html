@@ -153,6 +153,80 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             z-index: 10;
         }
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(197, 160, 40, 0.14);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s ease, background 0.45s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: rgba(197, 160, 40, 0.28);
+            box-shadow: 0 34px 70px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.16);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pricing-card li {
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+            padding: 0.9rem 0;
+        }
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+        .pricing-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: max-content;
+            white-space: nowrap;
+            color: #4b4822;
+            font-weight: 600;
+            text-decoration: none;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
+        }
+        .pricing-link::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.35s ease, left 0.35s ease;
+        }
+        .pricing-hero-title {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #FF7F2F;
+            line-height: 1.02;
+        }
+        .pricing-hero-copy {
+            color: rgba(26, 32, 44, 0.9);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        .pricing-link:hover {
+            color: #62531f;
+            transform: translateY(-2px);
+            text-shadow: 0 0 18px rgba(197, 160, 40, 0.18);
+        }
+        .pricing-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .pricing-section {
+            background: #1A202C;
+            color: #ffffff;
+        }
+        .pricing-title {
+            color: #1A202C;
+        }
         .video-container {
             position: absolute;
             top: 0;
@@ -253,7 +327,7 @@
 <!-- Top Navigation Bar -->
 <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/20" id="top-nav">
 <div class="flex items-center gap-4">
-<img alt="Springfield Properties Logo" class="w-auto object-contain h-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrldSXu2SLy_zIvI2n5BHsm_PAKBmdJ40vsklJ1LxZXA2fOqxqcdEqmyYtmDUXBHlulBvnDH_6kf7hQR3xEhzWlSk4De-hP3nPDsaA-anwgLrvlXXSVIeAoJw9O_Wqc4Pr4ma9Do6kGAXh8kjJ3igRd4PVH53-Iti_Djry572wqH67BEakExRFCTdT9YBHzlBy-McyyL2lxLgBHCljrWQYDMDUQR8SeNNmCK0GgSeEFX0LK2_NzS7-kRSipopNwWx6vYSysefYixA"/>
+<img alt="Springfield Properties Logo" class="w-auto object-contain h-20" src="assets/images/springfield-logo-header.png"/>
 </div>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="nav-link font-label-caps text-label-caps text-muted-gold active" href="#">Home</a>
@@ -300,9 +374,9 @@
 <!-- Hero Background Carousel -->
 <div class="video-container">
     <div class="hero-carousel">
-        <div class="hero-slide active" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDM_SSnRGyKROsoCD1NtP-fkjuXkfPRYsl1aoUW-Om1EFLy_JEljOWqeW-CtdS52s7jj0X-7mOQlIF1wfYYT_H_DaPcmSmrDqC_Pe6eMR4WFauRUWuqmuq4OL0VoVVYwe4zg2hLpEar_ItsQccH4Ih6RNZbV6F_GHccQo5lEJTW404soH8RTJuAI1OAwmELLLZiQfD96a8DQRCBkoxf0KOdQRpI5t4fwqn1pUidziDt6kxVEyJlmNPE3qz9-oECy1zol3cxf2CoCIyx6ktlA6sD3osv11RxSQi6RdqwEwgTlql6Md-_E2VEbRIBiSWt793MNU9QeL2wxixZKXjc');"></div>
-        <div class="hero-slide" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4vGdUPRBaDNM8U4dPUjUPpRjG_X5mTC0PEucfGzpCx2mEAQ31mtVCGSxPi8OsClIFY-zYn8xhSSYthXtMWsUS8jPKNyb2T2VB-AsQOgPev69zGFSZ-u85dPktRxYW407ApzyHeLfkNGcm4yMSG1a12dpDaI6Qun_xVcKdJbd6FhjjU1vnTgF99Ux9wUaM5S81sxN9zlxBp93RF-OYy3JebYFrlFZhRhWDmT0AMtgWcSDNXuvfAic1IBRoAZHMK3S8w3xlejmnjro');"></div>
-        <div class="hero-slide" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkhno7ofmOmJS-2LSPDhrodRd0dUv4LPDx1zLTp1rheheK1mrb2VYIb7OMHcTB6gOCRNE1s2NpfQkwKE71IJma6oR3vu3DMKI1RO_NQBVLUGrbruC_CA--Jb7ab1XIfOPM8XBRwmud1UNnZc7rrLa8floXMChJw-f9mlv2FVJGjGHB0gPMZ0OFysQ9CY65YSiimvBHuU5d-UleSlseK9PfP0WkBA6XXrXwHGKV1qZnX6_F7Ki1sS5gJE58IJv-b0rsipXKkvt2aTE');"></div>
+        <div class="hero-slide active" style="background-image:url('assets/images/godrej-entrance.png');"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/hero-landscape.png');"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/hero-living-room.png');"></div>
     </div>
     <div class="absolute inset-0 hero-gradient z-10"></div>
 </div>
@@ -361,7 +435,7 @@
 <div class="md:col-span-7 reveal">
 <div class="relative group">
 <div class="absolute -top-6 -left-6 w-full h-full border-2 border-muted-gold/20 -z-10 group-hover:top-0 group-hover:left-0 transition-all duration-500"></div>
-<img alt="A grand, architectural entrance of Godrej Woodscapes featuring high-quality stone masonry, integrated greenery with ivy and lush plants, and a sophisticated minimalist sign." class="w-full h-auto shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM_SSnRGyKROsoCD1NtP-fkjuXkfPRYsl1aoUW-Om1EFLy_JEljOWqeW-CtdS52s7jj0X-7mOQlIF1wfYYT_H_DaPcmSmrDqC_Pe6eMR4WFauRUWuqmuq4OL0VoVVbVFGGjlXY2tXMBTEVvGbvRIJe-glo5L1uqzYK0pDGmrgMRkE6gQVH8qkhIV2A9EmB5_n8cWa1zizPhXPpvpD8Z9kEGkQob0IcSJJtKc0yBBU5SkqPBuhfXaZ0PKjEAigYjWGKBabTBTRcYpA"/>
+<img alt="A grand, architectural entrance of Godrej Woodscapes featuring high-quality stone masonry, integrated greenery with ivy and lush plants, and a sophisticated minimalist sign." class="w-full h-auto shadow-2xl" src="assets/images/godrej-entrance.png"/>
 </div>
 </div>
 <div class="md:col-span-5 flex flex-col gap-8 reveal" style="transition-delay: 200ms;">
@@ -394,7 +468,7 @@
 <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
 <!-- Large Highlight -->
 <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden glass-card reveal hover-lift">
-<img alt="An expansive aerial view of the lush central park within Godrej Woodscapes." class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2iViYCnX_Tuwwl8EXV1Dax9qKy5s0slHW50OrNVxNymGHH67yZZkb46RlVWdxa69dt0coo9VsYamjdq9Ixq_cBoWxQMK_yxyZQuhdbiUHmsgyzIDNVPAHNZ9wvsV3w5TLIs32dTiSPM1zHAbkW8Sjef68bl1UZP7_DdKoTE0T92qfPB_HnGgYDWr2G_ILvPKLqcb_mlp3T-UvsXUgstTP3P-VEc8m1WiE6EjaT5EwNJy7uVLTk8-DNDDiFIvnHl0n10D1dpSbMQ8"/>
+<img alt="An expansive aerial view of the lush central park within Godrej Woodscapes." class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="assets/images/central-park-aerial.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-slate-text/90 to-transparent flex flex-col justify-end p-10 text-white z-10">
 <h3 class="font-headline-md text-headline-md mb-4">Discover The Splendor Of Central Park</h3>
 <p class="font-body-md opacity-80">Experience nature at its finest with expansive green landscapes designed for rejuvenation.</p>
@@ -422,7 +496,7 @@
 <p class="font-label-caps text-label-caps uppercase tracking-wider">Sqft Retail Amenities</p>
 </div>
 <div class="md:col-span-1 relative group overflow-hidden reveal hover-lift" style="transition-delay: 300ms;">
-<img alt="A modern jogging track weaving through a manicured garden setting." class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4vGdUPRBaDNM8U4dPUjUPpRjG_X5mTC0PEucfGzpCx2mEAQ31mtVCGSxPi8OsClIFY-zYn8xhSSYthXtMWsUS8jPKNyb2T2VB-AsQOgPev69zGFSZ-u85dPktRxYW407ApzyHeLfkNGcm4yMSG1a12dpDaI6Qun_xVcKdJbd6FhjjU1vnTgF99Ux9wUaM5S81sxN9zlxBp93RF-OYy3JebYFrlFZhRhWDmT0AMtgWcSDNXuvfAic1IBRoAZHMK3S8w3xlejmnjro"/>
+<img alt="A modern jogging track weaving through a manicured garden setting." class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/images/hero-landscape.png"/>
 <div class="absolute inset-0 bg-slate-text/30 group-hover:bg-slate-text/10 transition-colors"></div>
 <div class="absolute bottom-6 left-6 text-white">
 <span class="font-label-caps text-label-caps">Wellness Focused</span>
@@ -480,16 +554,16 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 <div class="md:col-span-8 h-[500px] overflow-hidden reveal hover-lift">
-<img alt="A spacious, high-end living room at Godrej Woodscapes." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkhno7ofmOmJS-2LSPDhrodRd0dUv4LPDx1zLTp1rheheK1mrb2VYIb7OMHcTB6gOCRNE1s2NpfQkwKE71IJma6oR3vu3DMKI1RO_NQBVLUGrbruC_CA--Jb7ab1XIfOPM8XBRwmud1UNnZc7rrLa8floXMChJw-f9mlv2FVJGjGHB0gPMZ0OFysQ9CY65YSiimvBHuU5d-UleSlseK9PfP0WkBA6XXrXwHGKV1qZnX6_F7Ki1sS5gJE58IJv-b0rsipXKkvt2aTE"/>
+<img alt="A spacious, high-end living room at Godrej Woodscapes." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/hero-living-room.png"/>
 </div>
 <div class="md:col-span-4 h-[500px] overflow-hidden reveal hover-lift" style="transition-delay: 100ms;">
-<img alt="A contemporary designer kitchen." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAY78G3MLX6jtqJSKs--2jaL45Yim3PiPciZJcesKi3C5axOU5BcTgyVhEGCRp4Vxd5BI02yv_kWdtDvQv9WoDMBr0ZLLFAeWMUagOAcJBQGrcrGopjDZHKHEoNK_NaEqJ7RlqVY7pp49SIWHNXlTh60F5qY_PJ27ly-dBIFNqj6myGHaxagOWPphAltPnvnsugLoc6RIAV7zsPtlFU07bPtXsMhzbapdcnzGzbzev5S9jkziKhvgNLaOQXQehPq-doNcon16Vfq4"/>
+<img alt="A contemporary designer kitchen." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/designer-kitchen.png"/>
 </div>
 <div class="md:col-span-4 h-[400px] overflow-hidden reveal hover-lift" style="transition-delay: 200ms;">
-<img alt="A master bedroom at Godrej Woodscapes." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcd1Ks6RsxLo4bKS0Dhg86HVYz1nnkoDAdXnKOckFQ5LVlgK0vsc9QHkKBW4GMV8Fe46mSrJr7unKRQy7Vco3g_DkL8Bv5FWZ1KcML9IwltbaCKJbDRjTh67LllL_y1eKSs07PP2S_E-1JmsN6azeE-YomZhqVs29wQf_YuOfLJF5lKelFOfEJHNWCn7ZWI1BTiIJrWSJH2Us2AN4cm_xt_QzljlDOtPXAY9ymF_JCBGF1Tlg0i32CHobCvHjnURDn3sHyHjNj4DA"/>
+<img alt="A master bedroom at Godrej Woodscapes." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/master-bedroom.png"/>
 </div>
 <div class="md:col-span-8 h-[400px] overflow-hidden reveal hover-lift" style="transition-delay: 300ms;">
-<img alt="Wide shot of the community landscaping." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4vGdUPRBaDNM8U4dPUjUPpRjG_X5mTC0PEucfGzpCx2mEAQ31mtVCGSxPi8OsClIFY-zYn8xhSSYthXtMWsUS8jPKNyb2T2VB-AsQOgPev69zGFSZ-u85dPktRxYW407ApzyHeLfkNGcm4yMSG1a12dpDaI6Qun_xVcKdJbd6FhjjU1vnTgF99Ux9wUaM5S81sxN9zlxBp93RF-OYy3JebYFrlFZhRhWDmT0AMtgWcSDNXuvfAic1IBRoAZHMK3S8w3xlejmnjro"/>
+<img alt="Wide shot of the community landscaping." class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/hero-landscape.png"/>
 </div>
 </div>
 </div>
@@ -545,7 +619,7 @@
 </div>
 <div class="reveal lg:sticky lg:top-32" style="transition-delay: 300ms;">
 <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[600px] group">
-<img alt="A stylized map overlay showing Godrej Woodscapes' prime location." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM_SSnRGyKROsoCD1NtP-fkjuXkfPRYsl1aoUW-Om1EFLy_JEljOWqeW-CtdS52s7jj0X-7mOQlIF1wfYYT_H_DaPcmSmrDqC_Pe6eMR4WFauRUWuqmuq4OL0VoVVbVFGGjlXY2tXMBTEVvGbvRIJe-glo5L1uqzYK0pDGmrgMRkE6gQVH8qkhIV2A9EmB5_n8cWa1zizPhXPpvpD8Z9kEGkQob0IcSJJtKc0yBBU5SkqPBuhfXaZ0PKjEAigYjWGKBabTBTRcYpA"/>
+<img alt="A stylized map overlay showing Godrej Woodscapes' prime location." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="assets/images/godrej-entrance.png"/>
 <div class="absolute inset-0 bg-slate-text/10 group-hover:bg-transparent transition-all duration-500"></div>
 <div class="absolute top-6 right-6 bg-white p-4 shadow-lg flex items-center gap-3">
 <span class="material-symbols-outlined text-muted-gold">pin_drop</span>
@@ -582,6 +656,68 @@
 </form>
 </div>
 </section>
+<section class="pricing-section py-32 px-margin-desktop bg-slate-text text-white" id="at-zentariq">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14 reveal">
+            <h2 class="font-display-lg text-display-lg pricing-hero-title">At Zentariq Solutions</h2>
+            <p class="font-body-lg text-body-lg mt-4 text-white/90">We Have Flexible Creative Retainers Designed for Ambitious Brands.</p>
+            <p class="font-headline-md text-headline-md mt-4 pricing-hero-copy">Flexible creative retainers designed for ambitious brands.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="pricing-card rounded-[2rem] p-10 reveal hover-lift h-full flex flex-col justify-between" style="transition-delay: 120ms;">
+                <div class="mb-8">
+                    <h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-muted-gold">BASIC RETAINER</h3>
+                    <p class="font-headline-md text-headline-md text-slate-text mt-5">₹20K – ₹30K / month</p>
+                </div>
+                <ul class="font-body-lg text-on-surface-variant space-y-3">
+                    <li>12 Static Posts OR 8 Posts + 4 Reels</li>
+                    <li>Caption Writing + Hashtags</li>
+                    <li>Basic Page Management (DM replies optional)</li>
+                    <li>1 Monthly Report</li>
+                    <li>2 Revisions Per Creative</li>
+                </ul>
+                <div class="mt-10 text-center">
+                    <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="pricing-link">Let’s Talk</a>
+                </div>
+            </article>
+            <article class="pricing-card rounded-[2rem] p-10 reveal hover-lift h-full flex flex-col justify-between" style="transition-delay: 220ms;">
+                <div class="mb-8">
+                    <h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-muted-gold">GROWTH RETAINER</h3>
+                    <p class="font-headline-md text-headline-md text-slate-text mt-5">₹40K – ₹70K / month</p>
+                </div>
+                <ul class="font-body-lg text-on-surface-variant space-y-3">
+                    <li>16–20 Posts (Mix of Static + reels)</li>
+                    <li>Content Calendar Strategy</li>
+                    <li>Caption + Hooks + CTA Optimization</li>
+                    <li>Basic Ad Management (1–2 Campaigns)</li>
+                    <li>Monthly Analytics + Strategy Call</li>
+                    <li>3 Revisions Per Creative</li>
+                </ul>
+                <div class="mt-10 text-center">
+                    <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="pricing-link">Let’s Talk</a>
+                </div>
+            </article>
+            <article class="pricing-card rounded-[2rem] p-10 reveal hover-lift h-full flex flex-col justify-between" style="transition-delay: 320ms;">
+                <div class="mb-8">
+                    <h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-muted-gold">PREMIUM RETAINER</h3>
+                    <p class="font-headline-md text-headline-md text-slate-text mt-5">₹80K – ₹1.5L+ / month</p>
+                </div>
+                <ul class="font-body-lg text-on-surface-variant space-y-3">
+                    <li>20–30 High-Quality Posts/reels</li>
+                    <li>Full Content Strategy + Competitor Analysis</li>
+                    <li>Advanced Ad Management (Meta/Google)</li>
+                    <li>Funnel Support (Landing Page Suggestions)</li>
+                    <li>Weekly Reporting + Monthly Strategy Call</li>
+                    <li>Priority Execution</li>
+                    <li>3–4 Revisions Per Creative</li>
+                </ul>
+                <div class="mt-10 text-center">
+                    <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="pricing-link">Let’s Talk</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 <!-- Footer -->
 <footer class="w-full py-16 px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter items-start bg-warm-ivory border-t border-outline-variant/30">
 <div class="flex flex-col gap-6">
@@ -609,7 +745,7 @@
 <div class="md:col-span-3 pt-12 mt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-6">
 <p class="font-body-md text-on-surface-variant text-sm opacity-80">© 2026 Springfield Properties. All Rights Reserved.</p>
 <div class="flex gap-8">
-<img alt="Springfield Properties" class="h-8 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhQ6V6Pj-XMUEGADYPqrzTEEaR7NW9_nPOdcPjMhiAF0BujeP_E_S1SK9LyTaLiVO1PaY-21nJzPQY2qoOfbpRVcOpcdgcwgJeMPMP5zYAHZbW0p-wlVy6oBD2rQUakIW6paS8wiLG-RBjYjoL-CY33pjkRUlP4HsVEq6FozKKnszkgH91aKJMeRrcWDsZlKKl0_oHhxp95z46VeDP8pmHPmCBGZIJFhw-D25Yq9ekRbIjgIBaGbP2cR9HfBxkwYSmsS3dfIzYZwQ"/>
+<img alt="Springfield Properties" class="h-8 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" src="assets/images/springfield-logo-footer.png"/>
 </div>
 </div>
 </footer>
@@ -758,5 +894,28 @@
             }
         });
     });
+    // Convert CTAs to WhatsApp links
+    (function redirectCTAsToWhatsApp(){
+        var WA = 'https://wa.me/917996363343';
+        var exclude = ['.modal-close', '.close-modal', '#backToTop'];
+        document.querySelectorAll('button').forEach(function(btn){
+            try{
+                if (exclude.some(function(sel){ return btn.matches(sel); })) return;
+                var a = document.createElement('a');
+                a.href = WA;
+                a.target = '_blank';
+                a.rel = 'noreferrer';
+                a.className = btn.className || '';
+                a.innerHTML = btn.innerHTML;
+                a.style.cssText = btn.style.cssText || '';
+                btn.parentNode.replaceChild(a, btn);
+            }catch(e){}
+        });
+        document.querySelectorAll('a.open-modal-btn, a.pricing-link, a.cta, a[data-cta]').forEach(function(a){
+            a.href = WA;
+            a.target = '_blank';
+            a.rel = 'noreferrer';
+        });
+    })();
 </script>
 </body></html>
