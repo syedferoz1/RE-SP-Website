@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | Springfield Properties</title>
+<meta content="Pricing details" name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "subtle-gray": "#E2E8F0",
+                        "slate-text": "#1A202C",
+                        "on-primary-fixed-variant": "#4b4822",
+                        "surface-tint": "#636037",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "warm-ivory": "#FDFBF0",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "inverse-primary": "#cdc897",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#735c00",
+                        "surface-variant": "#d5e5ef",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe088",
+                        "primary-fixed-dim": "#cdc897",
+                        "on-error-container": "#93000a",
+                        "primary": "#636037",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#fff9c4",
+                        "secondary-container": "#dfe0e0",
+                        "surface-bright": "#f4faff",
+                        "on-secondary-container": "#616363",
+                        "secondary-fixed": "#e2e2e2",
+                        "muted-gold": "#C5A028",
+                        "surface-container-highest": "#d5e5ef",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#e3f3fd",
+                        "on-primary": "#ffffff",
+                        "background": "#f4faff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#5d5f5f",
+                        "on-primary-fixed": "#1e1c00",
+                        "surface-container": "#e0f0fb",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#daebf5",
+                        "outline": "#7a776b",
+                        "inverse-surface": "#23323a",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#cac6b8",
+                        "on-surface-variant": "#49473c",
+                        "primary-fixed": "#eae4b1",
+                        "surface-dim": "#ccdce7",
+                        "tertiary-container": "#fff6e7",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#767248",
+                        "surface-container-low": "#e7f6ff",
+                        "surface": "#f4faff",
+                        "on-background": "#0e1d25",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-surface": "#0e1d25",
+                        "on-tertiary-container": "#8a6e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["League Spartan"],
+                        "headline-md": ["League Spartan"],
+                        "label-caps": ["League Spartan"],
+                        "headline-lg-mobile": ["League Spartan"],
+                        "display-lg": ["League Spartan"],
+                        "body-lg": ["League Spartan"],
+                        "body-md": ["League Spartan"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 40, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.6));
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C5A028;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .hover-lift {
+            transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .hover-lift:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(197, 160, 40, 0.14);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s ease, background 0.45s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: rgba(197, 160, 40, 0.28);
+            box-shadow: 0 34px 70px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.16);
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pricing-card li {
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+            padding: 0.9rem 0;
+        }
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+        .pricing-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: max-content;
+            white-space: nowrap;
+            color: #4b4822;
+            font-weight: 600;
+            text-decoration: none;
+            padding-bottom: 0.25rem;
+            transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
+        }
+        .pricing-link::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.35s ease, left 0.35s ease;
+        }
+        .pricing-hero-title {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #FF7F2F;
+            line-height: 1.02;
+        }
+        .pricing-hero-copy {
+            color: rgba(26, 32, 44, 0.9);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        .pricing-link:hover {
+            color: #62531f;
+            transform: translateY(-2px);
+            text-shadow: 0 0 18px rgba(197, 160, 40, 0.18);
+        }
+        .pricing-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .pricing-section {
+            background: #1A202C;
+            color: #ffffff;
+        }
+        .pricing-title {
+            color: #1A202C;
+        }
+    </style>
+</head>
+<body class="bg-warm-ivory text-slate-text font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/20" id="top-nav">
+<div class="flex items-center gap-4">
+<img alt="Springfield Properties Logo" class="w-auto object-contain h-20" src="assets/images/springfield-logo-header.png"/>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="nav-link font-label-caps text-label-caps text-muted-gold active" href="index.html">Home</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#about-partner">About Us</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#highlights">Highlights</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#location">Location</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#gallery">Gallery</a>
+</nav>
+<button class="open-modal-btn bg-slate-text text-white px-6 py-2 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">Request Brochure</button>
+</header>
+
+<main class="pt-36">
+    <!-- Pricing Table -->
+    <section class="py-32 px-margin-desktop bg-white">
+    <div class="max-w-4xl mx-auto reveal">
+    <h2 class="font-headline-lg text-headline-lg text-center mb-16">Area &amp; Pricing</h2>
+    <div class="overflow-hidden border border-outline-variant/30 rounded-xl hover:shadow-lg transition-shadow duration-500">
+    <table class="w-full text-left">
+    <thead class="bg-primary-container/30">
+    <tr>
+    <th class="px-8 py-6 font-label-caps text-label-caps text-slate-text uppercase">Unit Type</th>
+    <th class="px-8 py-6 font-label-caps text-label-caps text-slate-text uppercase">Area</th>
+    <th class="px-8 py-6 font-label-caps text-label-caps text-slate-text uppercase">Price Onward</th>
+    <th class="px-8 py-6"></th>
+    </tr>
+    </thead>
+    <tbody class="divide-y divide-outline-variant/20">
+    <tr class="hover:bg-warm-ivory transition-colors group">
+    <td class="px-8 py-6 font-headline-md text-2xl group-hover:text-muted-gold transition-colors">3.5 BHK Luxe</td>
+    <td class="px-8 py-6 font-body-lg">2787 sq.ft</td>
+    <td class="px-8 py-6 font-body-lg text-muted-gold font-bold">₹ 2.79 Cr* +</td>
+    <td class="px-8 py-6 text-right">
+    <a href="https://wa.me/917996363343" class="text-slate-text font-label-caps text-label-caps border-b border-slate-text hover:text-muted-gold hover:border-muted-gold transition-all">Details</a>
+    </td>
+    </tr>
+    <tr class="hover:bg-warm-ivory transition-colors group">
+    <td class="px-8 py-6 font-headline-md text-2xl group-hover:text-muted-gold transition-colors">4 BHK</td>
+    <td class="px-8 py-6 font-body-lg">3630 sq.ft</td>
+    <td class="px-8 py-6 font-body-lg text-muted-gold font-bold">₹ 2.79 Cr* +</td>
+    <td class="px-8 py-6 text-right">
+    <a href="https://wa.me/917996363343" class="text-slate-text font-label-caps text-label-caps border-b border-slate-text hover:text-muted-gold hover:border-muted-gold transition-all">Details</a>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <p class="text-center mt-8 text-on-surface-variant font-body-md italic">*All prices are subject to change and indicative of base cost only.</p>
+    </div>
+    </section>
+
+    <!-- At Zentariq Pricing Cards -->
+    <section class="pricing-section py-32 px-margin-desktop bg-slate-text text-white" id="at-zentariq">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14 reveal">
+                <h2 class="font-display-lg text-display-lg pricing-hero-title">At Zentariq Solutions</h2>
+                <p class="font-body-lg text-body-lg mt-4 text-white/90">We Have Flexible Creative Retainers Designed for Ambitious Brands.</p>
+                <p class="font-headline-md text-headline-md mt-4 pricing-hero-copy">Flexible creative retainers designed for ambitious brands.</p>
+            </div>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <article class="pricing-card rounded-[2rem] p-10 reveal hover-lift h-full flex flex-col justify-between" style="transition-delay: 120ms;">
+                    <div class="mb-8">
+                        <h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-muted-gold">BASIC RETAINER</h3>
+                        <p class="font-headline-md text-headline-md text-slate-text mt-5">₹20K – ₹30K / Month</p>
+                    </div>
+                    <ul class="font-body-lg text-on-surface-variant space-y-3">
+                        <li>12 Static Posts OR 8 Posts + 4 Reels</li>
+                        <li>Caption Writing + Hashtags</li>
+                        <li>Basic Page Management (DM replies optional)</li>
+                        <li>1 Monthly Report</li>
+                        <li>2 Revisions Per Creative</li>
+                    </ul>
+                    <div class="mt-10 text-center">
+                        <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="pricing-link">Let’s Talk</a>
+                    </div>
+                </article>
+                <article class="pricing-card rounded-[2rem] p-10 reveal hover-lift h-full flex flex-col justify-between" style="transition-delay: 220ms;">
+                    <div class="mb-8">
+                        <h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-muted-gold">GROWTH RETAINER</h3>
+                        <p class="font-headline-md text-headline-md text-slate-text mt-5">₹40K – ₹70K / Month</p>
+                    </div>
+                    <ul class="font-body-lg text-on-surface-variant space-y-3">
+                        <li>16–20 Posts (Mix of Static + reels)</li>
+                        <li>Content Calendar Strategy</li>
+                        <li>Caption + Hooks + CTA Optimization</li>
+                        <li>Basic Ad Management (1–2 Campaigns)</li>
+                        <li>Monthly Analytics + Strategy Call</li>
+                        <li>3 Revisions Per Creative</li>
+                    </ul>
+                    <div class="mt-10 text-center">
+                        <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="pricing-link">Let’s Talk</a>
+                    </div>
+                </article>
+                <article class="pricing-card rounded-[2rem] p-10 reveal hover-lift h-full flex flex-col justify-between" style="transition-delay: 320ms;">
+                    <div class="mb-8">
+                        <h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-muted-gold">PREMIUM RETAINER</h3>
+                        <p class="font-headline-md text-headline-md text-slate-text mt-5">₹80K – ₹1.5L+ / Month</p>
+                    </div>
+                    <ul class="font-body-lg text-on-surface-variant space-y-3">
+                        <li>20–30 High-Quality Posts/reels</li>
+                        <li>Full Content Strategy + Competitor Analysis</li>
+                        <li>Advanced Ad Management (Meta/Google)</li>
+                        <li>Funnel Support (Landing Page Suggestions)</li>
+                        <li>Weekly Reporting + Monthly Strategy Call</li>
+                        <li>Priority Execution</li>
+                        <li>3–4 Revisions Per Creative</li>
+                    </ul>
+                    <div class="mt-10 text-center">
+                        <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="pricing-link">Let’s Talk</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer (same as main site) -->
+<footer class="w-full py-16 px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter items-start bg-warm-ivory border-t border-outline-variant/30">
+<div class="flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-slate-text tracking-tight">Springfield Properties</h3>
+<p class="font-body-md text-on-surface-variant opacity-90">Your trusted real estate partner in Bengaluru. Authorized channel sellers for Godrej Woodscapes.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-text hover:text-muted-gold cursor-pointer transition-colors p-2 hover:bg-muted-gold/10 rounded-full">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-text hover:text-muted-gold cursor-pointer transition-colors p-2 hover:bg-muted-gold/10 rounded-full">public</span>
+<span class="material-symbols-outlined text-slate-text hover:text-muted-gold cursor-pointer transition-colors p-2 hover:bg-muted-gold/10 rounded-full">link</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-slate-text uppercase mb-2">Quick Links</h4>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="index.html#about-partner">About Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="index.html#contact">Contact Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors duration-200" href="#">Terms &amp; Conditions</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-slate-text uppercase mb-2">Contact</h4>
+<p class="font-body-md text-on-surface-variant mt-2">
+<span class="font-bold">Phone:</span> +91 7406925541
+        </p>
+</div>
+<div class="md:col-span-3 pt-12 mt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body-md text-on-surface-variant text-sm opacity-80">© 2026 Springfield Properties. All Rights Reserved.</p>
+<div class="flex gap-8">
+<img alt="Springfield Properties" class="h-8 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" src="assets/images/springfield-logo-footer.png"/>
+</div>
+</div>
+</footer>
+
+<script>
+    // Minimal scripts to keep reveal and link behavior
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+    reveal();
+</script>
+</body></html>
