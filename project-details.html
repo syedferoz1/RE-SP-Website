@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Project Details | Springfield Properties</title>
+    <meta content="Explore detailed project information, amenities, floor plans, and investment opportunities." name="description"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "subtle-gray": "#E2E8F0",
+                        "slate-text": "#1A202C",
+                        "on-primary-fixed-variant": "#4b4822",
+                        "surface-tint": "#636037",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "warm-ivory": "#FDFBF0",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "inverse-primary": "#cdc897",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#735c00",
+                        "surface-variant": "#d5e5ef",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe088",
+                        "primary-fixed-dim": "#cdc897",
+                        "on-error-container": "#93000a",
+                        "primary": "#636037",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#fff9c4",
+                        "secondary-container": "#dfe0e0",
+                        "surface-bright": "#f4faff",
+                        "on-secondary-container": "#616363",
+                        "secondary-fixed": "#e2e2e2",
+                        "muted-gold": "#C5A028",
+                        "surface-container-highest": "#d5e5ef",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#e3f3fd",
+                        "on-primary": "#ffffff",
+                        "background": "#f4faff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#5d5f5f",
+                        "on-primary-fixed": "#1e1c00",
+                        "surface-container": "#e0f0fb",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#daebf5",
+                        "outline": "#7a776b",
+                        "inverse-surface": "#23323a",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#cac6b8",
+                        "on-surface-variant": "#49473c",
+                        "primary-fixed": "#eae4b1",
+                        "surface-dim": "#ccdce7",
+                        "tertiary-container": "#fff6e7",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#767248",
+                        "surface-container-low": "#e7f6ff",
+                        "surface": "#f4faff",
+                        "on-background": "#0e1d25",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-surface": "#0e1d25",
+                        "on-tertiary-container": "#8a6e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["League Spartan"],
+                        "headline-md": ["League Spartan"],
+                        "label-caps": ["League Spartan"],
+                        "headline-lg-mobile": ["League Spartan"],
+                        "display-lg": ["League Spartan"],
+                        "body-lg": ["League Spartan"],
+                        "body-md": ["League Spartan"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 40, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.6));
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C5A028;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .hover-lift {
+            transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .hover-lift:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            z-index: 1000;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-card {
+            width: min(100%, 600px);
+            background: #ffffff;
+            border-radius: 1.25rem;
+            box-shadow: 0 40px 120px rgba(15, 23, 42, 0.25);
+            overflow: hidden;
+        }
+        .modal-card .modal-body {
+            padding: 2rem;
+        }
+        .modal-card .modal-body h2 {
+            margin-top: 0.5rem;
+        }
+        .modal-card .modal-body label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #334155;
+        }
+        .modal-card .modal-body input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.75rem;
+            padding: 1rem 1rem;
+            color: #0f172a;
+        }
+        .modal-card .modal-body button {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            font-size: 1.25rem;
+            color: #475569;
+            cursor: pointer;
+        }
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fade-up 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-warm-ivory text-slate-text font-body-md overflow-x-hidden">
+<!-- Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/20">
+    <div class="flex items-center gap-4">
+        <a href="index.html">
+            <img alt="Springfield Properties Logo" class="w-auto object-contain h-20" src="assets/images/springfield-logo-header.png"/>
+        </a>
+    </div>
+    <nav class="hidden md:flex gap-8 items-center">
+        <a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="index.html">Home</a>
+        <a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="index.html#featured-projects">Projects</a>
+        <a class="nav-link font-label-caps text-label-caps text-muted-gold active" href="#">Project Details</a>
+    </nav>
+    <button class="open-site-visit-btn bg-slate-text text-white px-6 py-2 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">Book Site Visit</button>
+</header>
+
+<!-- Site Visit Modal -->
+<div id="site-visit-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card relative">
+        <button type="button" class="modal-close close-site-visit-modal" aria-label="Close popup">×</button>
+        <div id="site-visit-form-view" class="modal-body">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Book Site Visit</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Schedule Your Visit</h2>
+            <p class="font-body-lg text-on-surface-variant mt-4 mb-8">Experience the project firsthand with our expert advisors.</p>
+            <form id="site-visit-form" class="grid gap-6">
+                <div class="flex flex-col gap-2">
+                    <label for="visit-name">Name</label>
+                    <input id="visit-name" name="name" type="text" placeholder="Your full name" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="visit-phone">Phone</label>
+                    <input id="visit-phone" name="phone" type="tel" placeholder="+91 00000 00000" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="visit-date">Preferred Date</label>
+                    <input id="visit-date" name="date" type="date" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="visit-time">Preferred Time</label>
+                    <input id="visit-time" name="time" type="time" required />
+                </div>
+                <button type="submit" class="bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Confirm Booking</button>
+            </form>
+        </div>
+        <div id="site-visit-success-view" class="modal-body hidden text-center">
+            <span class="material-symbols-outlined text-muted-gold text-6xl block mb-4 animate-bounce">check_circle</span>
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Booking Confirmed</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Site Visit Scheduled</h2>
+            <p class="font-body-lg text-on-surface-variant mt-4 mb-8">Our team will confirm your visit shortly. Get ready for an amazing experience!</p>
+            <button type="button" class="close-site-visit-modal bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Project Hero Banner -->
+<section id="hero-banner" class="relative h-screen w-full flex items-center justify-center overflow-hidden pt-32">
+    <div class="absolute inset-0 bg-cover bg-center" id="hero-bg-image" style="background-image: url('assets/images/godrej-entrance.png');"></div>
+    <div class="absolute inset-0 hero-gradient z-10"></div>
+    <div class="relative z-20 text-center px-4 max-w-5xl">
+        <h1 id="project-title" class="font-display-lg text-display-lg text-white mb-6 reveal tracking-normal leading-[1.1]">Godrej Woodscapes</h1>
+        <p id="project-location" class="font-body-lg text-body-lg text-white/90 mb-10 reveal" style="transition-delay: 200ms;">Budigere Cross, Bengaluru</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center reveal" style="transition-delay: 400ms;">
+            <button class="open-site-visit-btn bg-white text-slate-text px-10 py-4 font-label-caps text-label-caps hover:bg-muted-gold hover:text-white transition-all duration-300 shadow-xl">Book Site Visit</button>
+            <button class="download-project-brochure border border-white text-white px-10 py-4 font-label-caps text-label-caps hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">Download Brochure</button>
+        </div>
+    </div>
+</section>
+
+<!-- Project Overview -->
+<section class="py-32 px-margin-desktop bg-white">
+    <div class="max-w-max-width mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Project Overview</span>
+                <h2 id="overview-title" class="font-headline-lg text-headline-lg mt-4 mb-6">Premium Living Redefined</h2>
+                <p id="overview-description" class="font-body-lg text-on-surface-variant mb-8">Discover a premium residential development that combines luxury, sustainability, and modern lifestyle amenities.</p>
+                <div class="grid grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <span id="spec-acres" class="block font-headline-md text-headline-md text-muted-gold">28+</span>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant">Acres of Land</span>
+                    </div>
+                    <div>
+                        <span id="spec-units" class="block font-headline-md text-headline-md text-muted-gold">500+</span>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant">Premium Units</span>
+                    </div>
+                </div>
+            </div>
+            <div id="overview-image" class="reveal" style="transition-delay: 200ms;">
+                <img alt="Project overview" class="w-full rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-500" src="assets/images/godrej-entrance.png"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Amenities Grid -->
+<section class="py-32 px-margin-desktop bg-primary-container/20">
+    <div class="max-w-max-width mx-auto">
+        <div class="text-center mb-20 reveal">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Lifestyle Features</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">World-Class Amenities</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="glass-card p-6 text-center hover-lift reveal">
+                <span class="material-symbols-outlined text-4xl text-muted-gold block mb-4">pool</span>
+                <p class="font-label-caps text-label-caps text-slate-text">Swimming Pool</p>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift reveal" style="transition-delay: 50ms;">
+                <span class="material-symbols-outlined text-4xl text-muted-gold block mb-4">fitness_center</span>
+                <p class="font-label-caps text-label-caps text-slate-text">Gym & Fitness</p>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift reveal" style="transition-delay: 100ms;">
+                <span class="material-symbols-outlined text-4xl text-muted-gold block mb-4">park</span>
+                <p class="font-label-caps text-label-caps text-slate-text">Green Spaces</p>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift reveal" style="transition-delay: 150ms;">
+                <span class="material-symbols-outlined text-4xl text-muted-gold block mb-4">sports_basketball</span>
+                <p class="font-label-caps text-label-caps text-slate-text">Sports Court</p>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift reveal" style="transition-delay: 200ms;">
+                <span class="material-symbols-outlined text-4xl text-muted-gold block mb-4">restaurant</span>
+                <p class="font-label-caps text-label-caps text-slate-text">Clubhouse</p>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift reveal" style="transition-delay: 250ms;">
+                <span class="material-symbols-outlined text-4xl text-muted-gold block mb-4">security</span>
+                <p class="font-label-caps text-label-caps text-slate-text">24/7 Security</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floor Plans Gallery -->
+<section class="py-32 px-margin-desktop bg-white">
+    <div class="max-w-max-width mx-auto">
+        <div class="text-center mb-20 reveal">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Design Excellence</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Floor Plans</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center">
+                <span class="text-5xl text-muted-gold font-bold mb-4 block">2 BHK</span>
+                <p class="text-sm text-on-surface-variant mb-6">Compact yet luxurious living spaces</p>
+                <span class="text-muted-gold font-bold">From ₹50L</span>
+            </div>
+            <div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center" style="transition-delay: 100ms;">
+                <span class="text-5xl text-muted-gold font-bold mb-4 block">3 BHK</span>
+                <p class="text-sm text-on-surface-variant mb-6">Spacious family homes with premium finishes</p>
+                <span class="text-muted-gold font-bold">From ₹75L</span>
+            </div>
+            <div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center" style="transition-delay: 200ms;">
+                <span class="text-5xl text-muted-gold font-bold mb-4 block">4 BHK</span>
+                <p class="text-sm text-on-surface-variant mb-6">Ultra-premium penthouses with private terraces</p>
+                <span class="text-muted-gold font-bold">From ₹1.2Cr</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Gallery -->
+<section class="py-32 px-margin-desktop bg-slate-text text-white">
+    <div class="max-w-max-width mx-auto">
+        <div class="mb-20 reveal">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Visual Journey</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Project Gallery</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div class="md:col-span-8 h-[500px] overflow-hidden reveal hover-lift">
+                <img alt="Project gallery image" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/hero-living-room.png"/>
+            </div>
+            <div class="md:col-span-4 h-[500px] overflow-hidden reveal hover-lift" style="transition-delay: 100ms;">
+                <img alt="Project gallery image" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/designer-kitchen.png"/>
+            </div>
+            <div class="md:col-span-4 h-[400px] overflow-hidden reveal hover-lift" style="transition-delay: 200ms;">
+                <img alt="Project gallery image" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/master-bedroom.png"/>
+            </div>
+            <div class="md:col-span-8 h-[400px] overflow-hidden reveal hover-lift" style="transition-delay: 300ms;">
+                <img alt="Project gallery image" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" src="assets/images/hero-landscape.png"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Location & Google Maps -->
+<section class="py-32 px-margin-desktop bg-warm-ivory">
+    <div class="max-w-max-width mx-auto">
+        <div class="text-center mb-20 reveal">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Strategic Location</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Location Advantages</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="reveal space-y-6">
+                <div class="p-8 glass-card rounded-xl hover:shadow-xl transition-all">
+                    <h3 class="font-headline-md text-2xl mb-4 text-slate-text">Transit Access</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-on-surface-variant">Whitefield Metro</span>
+                            <span class="font-bold">9.2 km</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-on-surface-variant">Airport</span>
+                            <span class="font-bold">27 km</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-8 glass-card rounded-xl hover:shadow-xl transition-all">
+                    <h3 class="font-headline-md text-2xl mb-4 text-slate-text">Nearby Schools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-muted-gold/20 text-slate-text px-3 py-1 rounded-full text-xs font-bold">VIBGYOR High</span>
+                        <span class="bg-muted-gold/20 text-slate-text px-3 py-1 rounded-full text-xs font-bold">DPS Whitefield</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal" style="transition-delay: 200ms;">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[600px]">
+                    <iframe allowfullscreen="" aria-label="project location map" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7165815524666!2d77.76450231482277!3d12.956329990862267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1d41d6b6b6b5%3A0x5b1d41d6b6b6b6!2sBudigere%20Cross!5e0!3m2!1sen!2sin!4v"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lead Capture CTA -->
+<section class="py-32 px-margin-desktop bg-primary-container/20">
+    <div class="max-w-4xl mx-auto glass-card p-12 md:p-20 shadow-2xl reveal hover:shadow-3xl transition-shadow">
+        <div class="text-center mb-12">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Ready to Invest</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Start Your Journey Today</h2>
+            <p class="font-body-lg text-on-surface-variant mt-6">Connect with our expert advisors to explore investment opportunities and secure your premium home.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <button class="open-site-visit-btn bg-slate-text text-white px-10 py-4 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300 shadow-lg">Book Site Visit</button>
+            <button class="download-project-brochure bg-white border-2 border-slate-text text-slate-text px-10 py-4 font-label-caps text-label-caps hover:bg-slate-text hover:text-white transition-all duration-300">Download Brochure</button>
+            <a href="https://wa.me/917996363343?text=I%20want%20to%20invest%20in%20this%20project" target="_blank" rel="noreferrer" class="bg-[#25D366] text-white px-10 py-4 font-label-caps text-label-caps hover:bg-[#20BA5A] transition-all duration-300 text-center rounded-lg shadow-lg">WhatsApp Advisor</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter items-start bg-warm-ivory border-t border-outline-variant/30">
+    <div class="flex flex-col gap-6">
+        <h3 class="font-headline-md text-headline-md text-slate-text">Springfield Properties</h3>
+        <p class="font-body-md text-on-surface-variant">Trusted real estate partner in Bengaluru.</p>
+    </div>
+    <div class="flex flex-col gap-4">
+        <h4 class="font-label-caps text-label-caps text-slate-text uppercase">Quick Links</h4>
+        <a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors" href="index.html">Home</a>
+        <a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors" href="index.html#featured-projects">Projects</a>
+        <a class="font-body-md text-on-surface-variant hover:text-muted-gold transition-colors" href="dashboard.html">Dashboard</a>
+    </div>
+    <div class="flex flex-col gap-4">
+        <h4 class="font-label-caps text-label-caps text-slate-text uppercase">Contact</h4>
+        <p class="font-body-md text-on-surface-variant"><span class="font-bold">Phone:</span> +91 7406925541</p>
+    </div>
+    <div class="md:col-span-3 pt-12 mt-12 border-t border-outline-variant/20 flex justify-between items-center">
+        <p class="font-body-md text-on-surface-variant text-sm">© 2026 Springfield Properties. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="fixed bottom-8 right-8 bg-slate-text text-white p-4 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-40 hover:bg-muted-gold transform hover:scale-110" id="backToTop">
+    <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+
+<script>
+    // Scroll Reveal Animation
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+    reveal();
+
+    // Back to Top
+    const backToTop = document.getElementById('backToTop');
+    window.onscroll = function() {
+        if (window.pageYOffset > 50) {
+            backToTop.classList.remove('opacity-0', 'translate-y-10');
+            backToTop.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            backToTop.classList.add('opacity-0', 'translate-y-10');
+            backToTop.classList.remove('opacity-100', 'translate-y-0');
+        }
+    };
+
+    backToTop.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Site Visit Modal
+    const siteVisitModal = document.getElementById('site-visit-modal');
+    const siteVisitForm = document.getElementById('site-visit-form');
+    const siteVisitFormView = document.getElementById('site-visit-form-view');
+    const siteVisitSuccessView = document.getElementById('site-visit-success-view');
+    const openSiteVisitButtons = document.querySelectorAll('.open-site-visit-btn');
+    const closeSiteVisitButtons = document.querySelectorAll('.close-site-visit-modal');
+
+    openSiteVisitButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            siteVisitFormView.classList.remove('hidden');
+            siteVisitSuccessView.classList.add('hidden');
+            siteVisitModal.classList.add('active');
+            siteVisitModal.setAttribute('aria-hidden', 'false');
+        });
+    });
+
+    closeSiteVisitButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            siteVisitModal.classList.remove('active');
+            siteVisitModal.setAttribute('aria-hidden', 'true');
+        });
+    });
+
+    siteVisitForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        siteVisitFormView.classList.add('hidden');
+        siteVisitSuccessView.classList.remove('hidden');
+    });
+
+    // Download Brochure
+    const downloadButtons = document.querySelectorAll('.download-project-brochure');
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Redirect user to WhatsApp with a prefilled brochure request for this project
+            var msg = 'I would like to receive the brochure for ' + (projects[projectId]?.title || 'this project');
+            window.open('https://wa.me/917996363343?text=' + encodeURIComponent(msg), '_blank');
+        });
+    });
+
+    // Parse URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('project') || 'godrej-woodscapes';
+
+    // Project data
+    const projects = {
+        'godrej-woodscapes': {
+            title: 'Godrej Woodscapes',
+            location: 'Budigere Cross, Bengaluru',
+            image: 'assets/images/godrej-entrance.png',
+            acres: '28+',
+            units: '500+',
+            overview: 'A groundbreaking 28.15-acre development at Budigere Cross offering premium living with 85% open green spaces, luxury clubhouse, and world-class amenities.'
+        },
+        'prestige-raintree': {
+            title: 'Prestige Raintree Park',
+            location: 'Whitefield, Bengaluru',
+            image: 'assets/images/hero-landscape.png',
+            acres: '15+',
+            units: '300+',
+            overview: 'Gated community featuring landscape gardens, sports facilities, and integrated lifestyle amenities in prime Whitefield location.'
+        },
+        'sobha-neopolis': {
+            title: 'Sobha Neopolis',
+            location: 'Sarjapur Road, Bengaluru',
+            image: 'assets/images/hero-living-room.png',
+            acres: '20+',
+            units: '400+',
+            overview: 'Contemporary architecture with integrated lifestyle facilities, green courtyards, and premium finishing in a strategic location.'
+        },
+        'brigade-valencia': {
+            title: 'Brigade Valencia',
+            location: 'Electronic City, Bengaluru',
+            image: 'assets/images/designer-kitchen.png',
+            acres: '18+',
+            units: '350+',
+            overview: 'Integrated township with tech-enabled homes, premium commercial spaces, and modern amenities for smart living.'
+        }
+    };
+
+    // Load project data
+    if (projects[projectId]) {
+        const project = projects[projectId];
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-location').textContent = project.location;
+        document.getElementById('hero-bg-image').style.backgroundImage = `url('${project.image}')`;
+        document.getElementById('overview-title').textContent = project.title;
+        document.getElementById('overview-description').textContent = project.overview;
+        document.getElementById('overview-image').querySelector('img').src = project.image;
+        document.getElementById('spec-acres').textContent = project.acres;
+        document.getElementById('spec-units').textContent = project.units;
+    }
+</script>
+</body>
+</html>

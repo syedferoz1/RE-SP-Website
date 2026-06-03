@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Thank You | Springfield Properties</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "subtle-gray": "#E2E8F0",
+                        "slate-text": "#1A202C",
+                        "muted-gold": "#C5A028",
+                        "warm-ivory": "#FDFBF0"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["League Spartan"],
+                        "headline-md": ["League Spartan"],
+                        "label-caps": ["League Spartan"],
+                        "body-lg": ["League Spartan"],
+                        "body-md": ["League Spartan"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 40, 0.1);
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes scale-in {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate-scale-in {
+            animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-warm-ivory text-slate-text font-body-md overflow-x-hidden min-h-screen flex items-center justify-center">
+
+<!-- Success Page -->
+<div class="text-center px-4 py-16 max-w-3xl mx-auto">
+    <!-- Success Icon -->
+    <div class="mb-8 inline-block">
+        <div class="relative w-32 h-32 mx-auto">
+            <!-- Circle background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-muted-gold/20 to-muted-gold/5 rounded-full"></div>
+            <!-- Icon -->
+            <svg class="w-32 h-32 text-muted-gold animate-scale-in" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Heading -->
+    <div class="mb-6 reveal active">
+        <p class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em] mb-4">Success</p>
+        <h1 class="font-display-lg text-4xl md:text-5xl text-slate-text mb-4 leading-tight">Thank You!</h1>
+        <h2 class="font-headline-lg text-headline-lg text-slate-text mb-6">Your Request Has Been Received</h2>
+    </div>
+
+    <!-- Subheading -->
+    <div class="mb-12 reveal active" style="animation-delay: 200ms;">
+        <p class="font-body-lg text-on-surface-variant mb-4 max-w-2xl mx-auto">
+            Our property advisor will contact you shortly to discuss your investment opportunities and answer any questions you may have.
+        </p>
+        <p class="font-body-md text-gray-600 max-w-2xl mx-auto">
+            In the meantime, you can explore more projects or get in touch via WhatsApp for immediate assistance.
+        </p>
+    </div>
+
+    <!-- Additional Details -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="glass-card p-6 rounded-2xl border border-muted-gold/20 reveal" style="animation-delay: 300ms;">
+            <span class="material-symbols-outlined text-4xl text-muted-gold block mb-3">schedule</span>
+            <h3 class="font-headline-md text-xl mb-2 text-slate-text">24-48 Hours</h3>
+            <p class="text-sm text-gray-600">We typically respond within 24-48 business hours</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-muted-gold/20 reveal" style="animation-delay: 400ms;">
+            <span class="material-symbols-outlined text-4xl text-muted-gold block mb-3">phone_in_talk</span>
+            <h3 class="font-headline-md text-xl mb-2 text-slate-text">Direct Contact</h3>
+            <p class="text-sm text-gray-600">Personalized consultation with our expert team</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border border-muted-gold/20 reveal" style="animation-delay: 500ms;">
+            <span class="material-symbols-outlined text-4xl text-muted-gold block mb-3">check_circle</span>
+            <h3 class="font-headline-md text-xl mb-2 text-slate-text">Next Steps</h3>
+            <p class="text-sm text-gray-600">We'll guide you through the investment process</p>
+        </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-6 justify-center reveal" style="animation-delay: 600ms;">
+        <a href="index.html" class="bg-slate-text text-white px-10 py-4 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300 rounded-lg shadow-lg transform hover:scale-105">
+            ← Return to Home
+        </a>
+        <a href="https://wa.me/917996363343?text=Hi,%20I%20just%20submitted%20a%20lead%20form%20and%20would%20like%20to%20know%20more%20about%20the%20projects." target="_blank" rel="noreferrer" class="bg-[#25D366] text-white px-10 py-4 font-label-caps text-label-caps hover:bg-[#20BA5A] transition-all duration-300 rounded-lg shadow-lg transform hover:scale-105 inline-block">
+            💬 WhatsApp Advisor
+        </a>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-16 pt-12 border-t border-gray-200">
+        <p class="font-label-caps text-label-caps text-gray-600 uppercase tracking-wider mb-6">Contact Information</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div>
+                <p class="text-sm text-gray-600 mb-2">📞 Phone</p>
+                <a href="tel:+917406925541" class="text-slate-text font-bold hover:text-muted-gold transition-colors text-lg">+91 7406925541</a>
+            </div>
+            <div>
+                <p class="text-sm text-gray-600 mb-2">💬 WhatsApp</p>
+                <a href="https://wa.me/917996363343" target="_blank" rel="noreferrer" class="text-[#25D366] font-bold hover:text-[#20BA5A] transition-colors text-lg">Chat Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="fixed bottom-0 left-0 right-0 text-center py-6 border-t border-gray-200 bg-white">
+    <p class="text-sm text-gray-600">© 2026 Springfield Properties. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Trigger reveal animations on load
+    document.querySelectorAll('.reveal').forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.add('active');
+        }, index * 100);
+    });
+</script>
+</body>
+</html>

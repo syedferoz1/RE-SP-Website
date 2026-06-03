@@ -321,6 +321,19 @@
             color: #475569;
             cursor: pointer;
         }
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fade-up 0.5s ease-out;
+        }
     </style>
 </head>
 <body class="bg-warm-ivory text-slate-text font-body-md overflow-x-hidden">
@@ -331,6 +344,7 @@
 </div>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="nav-link font-label-caps text-label-caps text-muted-gold active" href="#">Home</a>
+<a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#featured-projects">Projects</a>
 <a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#about-partner">About Us</a>
 <a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#highlights">Highlights</a>
 <a class="nav-link font-label-caps text-label-caps text-slate-text/80 hover:text-muted-gold transition-colors duration-300" href="#location">Location</a>
@@ -368,6 +382,57 @@
             <button type="button" class="close-modal bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Close</button>
         </div>
     </div>
+</div>
+<!-- Brochure Download Modal -->
+<div id="brochure-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card relative">
+        <button type="button" class="modal-close close-brochure-modal" aria-label="Close popup">×</button>
+        <div id="brochure-form-view" class="modal-body">
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Download Brochure</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Get project brochure</h2>
+            <p id="brochure-project-name" class="font-body-lg text-on-surface-variant mt-4 mb-8">Detailed project information will be sent to your email.</p>
+            <form id="brochure-form" class="grid gap-6">
+                <div class="flex flex-col gap-2">
+                    <label for="brochure-name">Name</label>
+                    <input id="brochure-name" name="name" type="text" placeholder="Your full name" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="brochure-phone">Phone</label>
+                    <input id="brochure-phone" name="phone" type="tel" placeholder="+91 00000 00000" required />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="brochure-email">Email Address</label>
+                    <input id="brochure-email" name="email" type="email" placeholder="your.email@example.com" required />
+                </div>
+                <button type="submit" class="bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Send Brochure</button>
+            </form>
+        </div>
+        <div id="brochure-success-view" class="modal-body hidden text-center">
+            <span class="material-symbols-outlined text-muted-gold text-6xl block mb-4 animate-bounce">check_circle</span>
+            <span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Success</span>
+            <h2 class="font-headline-lg text-headline-lg mt-4">Brochure Download Started</h2>
+            <p class="font-body-lg text-on-surface-variant mt-4 mb-8">Check your email for the project brochure. Our team will contact you shortly.</p>
+            <button type="button" class="close-brochure-modal bg-slate-text text-white font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300">Close</button>
+        </div>
+    </div>
+</div>
+<!-- Floating WhatsApp Widget -->
+<div id="whatsapp-widget" class="fixed bottom-8 right-8 z-40">
+<div id="whatsapp-menu" class="absolute bottom-24 right-0 bg-white rounded-2xl shadow-2xl p-6 hidden w-80 glass-card animate-fade-up">
+<div class="text-center mb-6">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase">How can we help?</span>
+<h3 class="font-headline-md text-headline-md text-slate-text mt-2">Talk to an Advisor</h3>
+</div>
+<div class="space-y-3">
+<a href="https://wa.me/917996363343?text=I%20want%20to%20know%20more%20about%20project%20details" target="_blank" rel="noreferrer" class="block p-4 bg-muted-gold/10 hover:bg-muted-gold hover:text-white text-slate-text rounded-xl transition-all duration-300 text-center font-label-caps text-label-caps">Project Details</a>
+<a href="https://wa.me/917996363343?text=I%20want%20to%20know%20the%20latest%20pricing" target="_blank" rel="noreferrer" class="block p-4 bg-muted-gold/10 hover:bg-muted-gold hover:text-white text-slate-text rounded-xl transition-all duration-300 text-center font-label-caps text-label-caps">Latest Pricing</a>
+<a href="https://wa.me/917996363343?text=I%20want%20to%20book%20a%20site%20visit" target="_blank" rel="noreferrer" class="block p-4 bg-muted-gold/10 hover:bg-muted-gold hover:text-white text-slate-text rounded-xl transition-all duration-300 text-center font-label-caps text-label-caps">Site Visit</a>
+<a href="https://wa.me/917996363343?text=I%20need%20investment%20guidance" target="_blank" rel="noreferrer" class="block p-4 bg-muted-gold/10 hover:bg-muted-gold hover:text-white text-slate-text rounded-xl transition-all duration-300 text-center font-label-caps text-label-caps">Investment Guidance</a>
+</div>
+</div>
+<button id="whatsapp-toggle" class="bg-[#25D366] text-white p-5 rounded-full shadow-xl hover:bg-[#20BA5A] transition-all duration-300 transform hover:scale-110 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">forum</span>
+</button>
 </div>
 <!-- Hero Section -->
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
@@ -455,6 +520,94 @@
 </div>
 </div>
 <button class="open-modal-btn w-fit bg-slate-text text-white px-8 py-3 font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">Request Details</button>
+</div>
+</div>
+</section>
+<!-- Featured Projects Section -->
+<section class="py-32 px-margin-desktop bg-warm-ivory" id="featured-projects">
+<div class="max-w-max-width mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Premium Portfolio</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">Featured Projects</h2>
+<p class="font-body-lg text-on-surface-variant mt-6 max-w-3xl mx-auto">Explore our exclusive collection of premium residential developments across Bengaluru. Each project represents the pinnacle of luxury living and investment potential.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Project 1: Godrej Woodscapes -->
+<div class="group glass-card rounded-2xl overflow-hidden hover-lift reveal" style="transition-delay: 0ms;">
+<div class="relative h-64 overflow-hidden bg-muted-gold/10">
+<img alt="Godrej Woodscapes - luxury residential development" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/godrej-entrance.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-text/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-slate-text mb-2">Godrej Woodscapes</h3>
+<p class="text-sm text-on-surface-variant mb-3">Budigere Cross, Bengaluru</p>
+<p class="font-body-md text-on-surface-variant mb-4">28.15 acres of modern sanctuary with 85% open green spaces. Premium clubhouse and retail amenities.</p>
+<div class="mb-6">
+<span class="inline-block bg-muted-gold/20 text-slate-text px-3 py-1 rounded-full text-xs font-bold">From ₹50L</span>
+</div>
+<div class="flex gap-3">
+<a href="project-details.html?project=godrej-woodscapes" class="flex-1 text-center bg-slate-text text-white px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">View Project</a>
+<button class="download-brochure flex-1 bg-muted-gold/20 text-slate-text px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold hover:text-white transition-all duration-300" data-project="godrej-woodscapes">Brochure</button>
+</div>
+</div>
+</div>
+<!-- Project 2: Prestige Raintree Park -->
+<div class="group glass-card rounded-2xl overflow-hidden hover-lift reveal" style="transition-delay: 100ms;">
+<div class="relative h-64 overflow-hidden bg-muted-gold/10">
+<img alt="Prestige Raintree Park - premium residential community" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/hero-landscape.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-text/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-slate-text mb-2">Prestige Raintree Park</h3>
+<p class="text-sm text-on-surface-variant mb-3">Whitefield, Bengaluru</p>
+<p class="font-body-md text-on-surface-variant mb-4">Gated community featuring landscape gardens, sports facilities, and lifestyle amenities.</p>
+<div class="mb-6">
+<span class="inline-block bg-muted-gold/20 text-slate-text px-3 py-1 rounded-full text-xs font-bold">From ₹75L</span>
+</div>
+<div class="flex gap-3">
+<a href="project-details.html?project=prestige-raintree" class="flex-1 text-center bg-slate-text text-white px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">View Project</a>
+<button class="download-brochure flex-1 bg-muted-gold/20 text-slate-text px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold hover:text-white transition-all duration-300" data-project="prestige-raintree">Brochure</button>
+</div>
+</div>
+</div>
+<!-- Project 3: Sobha Neopolis -->
+<div class="group glass-card rounded-2xl overflow-hidden hover-lift reveal" style="transition-delay: 200ms;">
+<div class="relative h-64 overflow-hidden bg-muted-gold/10">
+<img alt="Sobha Neopolis - luxury apartments" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/hero-living-room.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-text/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-slate-text mb-2">Sobha Neopolis</h3>
+<p class="text-sm text-on-surface-variant mb-3">Sarjapur Road, Bengaluru</p>
+<p class="font-body-md text-on-surface-variant mb-4">Contemporary architecture with integrated lifestyle facilities and green courtyards.</p>
+<div class="mb-6">
+<span class="inline-block bg-muted-gold/20 text-slate-text px-3 py-1 rounded-full text-xs font-bold">From ₹60L</span>
+</div>
+<div class="flex gap-3">
+<a href="project-details.html?project=sobha-neopolis" class="flex-1 text-center bg-slate-text text-white px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">View Project</a>
+<button class="download-brochure flex-1 bg-muted-gold/20 text-slate-text px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold hover:text-white transition-all duration-300" data-project="sobha-neopolis">Brochure</button>
+</div>
+</div>
+</div>
+<!-- Project 4: Brigade Valencia -->
+<div class="group glass-card rounded-2xl overflow-hidden hover-lift reveal" style="transition-delay: 300ms;">
+<div class="relative h-64 overflow-hidden bg-muted-gold/10">
+<img alt="Brigade Valencia - premium residential project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="assets/images/designer-kitchen.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-text/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-slate-text mb-2">Brigade Valencia</h3>
+<p class="text-sm text-on-surface-variant mb-3">Electronic City, Bengaluru</p>
+<p class="font-body-md text-on-surface-variant mb-4">Integrated township with tech-enabled homes and premium commercial spaces.</p>
+<div class="mb-6">
+<span class="inline-block bg-muted-gold/20 text-slate-text px-3 py-1 rounded-full text-xs font-bold">From ₹55L</span>
+</div>
+<div class="flex gap-3">
+<a href="project-details.html?project=brigade-valencia" class="flex-1 text-center bg-slate-text text-white px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold transition-all duration-300">View Project</a>
+<button class="download-brochure flex-1 bg-muted-gold/20 text-slate-text px-4 py-2 rounded-lg font-label-caps text-label-caps hover:bg-muted-gold hover:text-white transition-all duration-300" data-project="brigade-valencia">Brochure</button>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -624,6 +777,110 @@
 <button class="w-full bg-slate-text text-white py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-500 shadow-lg transform hover:-translate-y-1" type="submit">Confirm Appointment</button>
 </div>
 </form>
+</div>
+</section>
+<!-- Investment Calculator Section -->
+<section class="py-32 px-margin-desktop bg-primary-container/20" id="calculator">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16 reveal">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Smart Investment Tool</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">Investment Calculator</h2>
+<p class="font-body-lg text-on-surface-variant mt-6">Estimate your projected returns on real estate investments.</p>
+</div>
+<div class="glass-card p-12 shadow-2xl reveal hover:shadow-3xl transition-shadow duration-500">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-label-caps text-slate-text">Property Price (₹)</label>
+<input id="property-price" class="bg-white border-2 border-outline rounded-xl px-4 py-3 focus:ring-0 focus:border-muted-gold transition-all" type="number" placeholder="50,00,000" value="5000000"/>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-label-caps text-slate-text">Annual Growth Rate (%)</label>
+<input id="growth-rate" class="bg-white border-2 border-outline rounded-xl px-4 py-3 focus:ring-0 focus:border-muted-gold transition-all" type="number" placeholder="8" step="0.1" value="8"/>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-label-caps text-slate-text">Investment Period (Years)</label>
+<input id="investment-years" class="bg-white border-2 border-outline rounded-xl px-4 py-3 focus:ring-0 focus:border-muted-gold transition-all" type="number" placeholder="10" value="10"/>
+</div>
+</div>
+<button id="calculate-btn" class="w-full bg-slate-text text-white py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-muted-gold transition-all duration-300 rounded-xl shadow-lg transform hover:-translate-y-1">Calculate Returns</button>
+<div id="calc-results" class="mt-12 hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="text-center p-6 bg-white rounded-xl border border-muted-gold/20">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2">Initial Investment</p>
+<p id="initial-investment" class="font-headline-md text-headline-md text-slate-text">₹0</p>
+</div>
+<div class="text-center p-6 bg-white rounded-xl border border-muted-gold/20">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2">Projected Value</p>
+<p id="projected-value" class="font-headline-md text-headline-md text-muted-gold">₹0</p>
+</div>
+<div class="text-center p-6 bg-muted-gold/20 rounded-xl border border-muted-gold/40">
+<p class="font-label-caps text-label-caps text-slate-text mb-2">Total Returns</p>
+<p id="total-returns" class="font-headline-md text-headline-md text-slate-text">₹0</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Explorer Section -->
+<section class="py-32 px-margin-desktop bg-white" id="community">
+<div class="max-w-max-width mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="font-label-caps text-label-caps text-muted-gold uppercase tracking-[0.2em]">Location Intelligence</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">Community Explorer</h2>
+<p class="font-body-lg text-on-surface-variant mt-6">Discover essential amenities and services near your dream home.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Schools -->
+<div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center">
+<span class="material-symbols-outlined text-5xl text-muted-gold mb-4 block group-hover:scale-125 transition-transform duration-300">school</span>
+<h3 class="font-headline-md text-2xl mb-3 text-slate-text">Schools</h3>
+<p class="text-sm text-on-surface-variant mb-4">Top-rated institutions including VIBGYOR High, DPS Whitefield, and National Public School.</p>
+<div class="flex items-center justify-center gap-2 text-muted-gold font-bold text-sm">
+<span>5+ Schools</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+<!-- Hospitals -->
+<div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-5xl text-muted-gold mb-4 block group-hover:scale-125 transition-transform duration-300">local_hospital</span>
+<h3 class="font-headline-md text-2xl mb-3 text-slate-text">Hospitals</h3>
+<p class="text-sm text-on-surface-variant mb-4">Healthcare excellence with multi-specialty facilities and 24/7 emergency services.</p>
+<div class="flex items-center justify-center gap-2 text-muted-gold font-bold text-sm">
+<span>8+ Hospitals</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+<!-- Metro -->
+<div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-5xl text-muted-gold mb-4 block group-hover:scale-125 transition-transform duration-300">train</span>
+<h3 class="font-headline-md text-2xl mb-3 text-slate-text">Metro Access</h3>
+<p class="text-sm text-on-surface-variant mb-4">Seamless connectivity with Whitefield Metro Station just 9.2 km away.</p>
+<div class="flex items-center justify-center gap-2 text-muted-gold font-bold text-sm">
+<span>1 Station</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+<!-- Airport -->
+<div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-5xl text-muted-gold mb-4 block group-hover:scale-125 transition-transform duration-300">flight_takeoff</span>
+<h3 class="font-headline-md text-2xl mb-3 text-slate-text">Airport</h3>
+<p class="text-sm text-on-surface-variant mb-4">Quick access to Kempegowda International Airport, 27 km away.</p>
+<div class="flex items-center justify-center gap-2 text-muted-gold font-bold text-sm">
+<span>27 km</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+<!-- Shopping -->
+<div class="group glass-card p-8 rounded-2xl hover-lift reveal text-center" style="transition-delay: 400ms;">
+<span class="material-symbols-outlined text-5xl text-muted-gold mb-4 block group-hover:scale-125 transition-transform duration-300">shopping_mall</span>
+<h3 class="font-headline-md text-2xl mb-3 text-slate-text">Shopping Malls</h3>
+<p class="text-sm text-on-surface-variant mb-4">World-class retail experience with premium brands and dining options.</p>
+<div class="flex items-center justify-center gap-2 text-muted-gold font-bold text-sm">
+<span>3+ Malls</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+</div>
 </div>
 </section>
 <!-- Pricing cards moved to pricing.html -->
@@ -809,28 +1066,128 @@
             }
         });
     });
-    // Convert CTAs to WhatsApp links
-    (function redirectCTAsToWhatsApp(){
-        var WA = 'https://wa.me/917996363343';
-        var exclude = ['.modal-close', '.close-modal', '#backToTop'];
-        document.querySelectorAll('button').forEach(function(btn){
+    // Decorate elements with `data-wa` attribute to open WhatsApp with a prefilled message.
+    (function decorateWhatsAppLinks(){
+        var WA_BASE = 'https://wa.me/';
+        var waNumber = '917996363343';
+        document.querySelectorAll('[data-wa]').forEach(function(el){
             try{
-                if (exclude.some(function(sel){ return btn.matches(sel); })) return;
-                var a = document.createElement('a');
-                a.href = WA;
-                a.target = '_blank';
-                a.rel = 'noreferrer';
-                a.className = btn.className || '';
-                a.innerHTML = btn.innerHTML;
-                a.style.cssText = btn.style.cssText || '';
-                btn.parentNode.replaceChild(a, btn);
-            }catch(e){}
-        });
-        document.querySelectorAll('a.open-modal-btn, a.pricing-link, a.cta, a[data-cta]').forEach(function(a){
-            a.href = WA;
-            a.target = '_blank';
-            a.rel = 'noreferrer';
+                var text = el.dataset.wa || '';
+                var waUrl = WA_BASE + waNumber + '?text=' + encodeURIComponent(text);
+                if (el.tagName === 'A'){
+                    el.href = waUrl;
+                    el.target = '_blank';
+                    el.rel = 'noreferrer';
+                } else {
+                    el.addEventListener('click', function(e){
+                        e.preventDefault();
+                        window.open(waUrl, '_blank');
+                    });
+                }
+            }catch(e){ /* silently ignore */ }
         });
     })();
+    
+    // Brochure Download Modal Handler
+    const brochureModal = document.getElementById('brochure-modal');
+    const brochureForm = document.getElementById('brochure-form');
+    const brochureFormView = document.getElementById('brochure-form-view');
+    const brochureSuccessView = document.getElementById('brochure-success-view');
+    const brochureProjectName = document.getElementById('brochure-project-name');
+    const downloadBrochureButtons = document.querySelectorAll('.download-brochure');
+    const closeBrochureButtons = document.querySelectorAll('.close-brochure-modal');
+    
+    let selectedProject = '';
+    
+    downloadBrochureButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            selectedProject = button.getAttribute('data-project');
+            const projectTitle = button.closest('.glass-card').querySelector('h3').textContent;
+            brochureProjectName.textContent = `Get the detailed brochure for ${projectTitle}.`;
+            brochureFormView.classList.remove('hidden');
+            brochureSuccessView.classList.add('hidden');
+            brochureModal.classList.add('active');
+            brochureModal.setAttribute('aria-hidden', 'false');
+        });
+    });
+    
+    closeBrochureButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            brochureModal.classList.remove('active');
+            brochureModal.setAttribute('aria-hidden', 'true');
+        });
+    });
+    
+    brochureForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        brochureFormView.classList.add('hidden');
+        brochureSuccessView.classList.remove('hidden');
+        // Simulate brochure download
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.download = `${selectedProject}-brochure.pdf`;
+            document.body.appendChild(link);
+            link.remove();
+        }, 1500);
+    });
+    
+    // Investment Calculator
+    const calculateBtn = document.getElementById('calculate-btn');
+    const propertyPriceInput = document.getElementById('property-price');
+    const growthRateInput = document.getElementById('growth-rate');
+    const investmentYearsInput = document.getElementById('investment-years');
+    const calcResults = document.getElementById('calc-results');
+    const initialInvestment = document.getElementById('initial-investment');
+    const projectedValue = document.getElementById('projected-value');
+    const totalReturns = document.getElementById('total-returns');
+    
+    function formatCurrency(value) {
+        return '₹' + Math.round(value).toLocaleString('en-IN');
+    }
+    
+    calculateBtn.addEventListener('click', () => {
+        const principal = parseFloat(propertyPriceInput.value) || 0;
+        const rate = parseFloat(growthRateInput.value) / 100 || 0;
+        const years = parseFloat(investmentYearsInput.value) || 0;
+        
+        if (principal > 0 && rate >= 0 && years > 0) {
+            const futureValue = principal * Math.pow(1 + rate, years);
+            const returns = futureValue - principal;
+            
+            initialInvestment.textContent = formatCurrency(principal);
+            projectedValue.textContent = formatCurrency(futureValue);
+            totalReturns.textContent = formatCurrency(returns);
+            
+            calcResults.classList.remove('hidden');
+            calcResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
+    
+    // Allow Enter key to calculate
+    [propertyPriceInput, growthRateInput, investmentYearsInput].forEach(input => {
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                calculateBtn.click();
+            }
+        });
+    });
+    
+    // Floating WhatsApp Widget
+    const whatsappToggle = document.getElementById('whatsapp-toggle');
+    const whatsappMenu = document.getElementById('whatsapp-menu');
+    
+    whatsappToggle.addEventListener('click', () => {
+        whatsappMenu.classList.toggle('hidden');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('#whatsapp-widget')) {
+            whatsappMenu.classList.add('hidden');
+        }
+    });
 </script>
 </body></html>

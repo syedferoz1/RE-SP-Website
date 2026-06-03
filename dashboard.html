@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Lead Management Dashboard | Springfield Properties</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "subtle-gray": "#E2E8F0",
+                        "slate-text": "#1A202C",
+                        "muted-gold": "#C5A028",
+                        "warm-ivory": "#FDFBF0"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["League Spartan"],
+                        "headline-md": ["League Spartan"],
+                        "label-caps": ["League Spartan"],
+                        "body-lg": ["League Spartan"],
+                        "body-md": ["League Spartan"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 40, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-warm-ivory text-slate-text font-body-md">
+<!-- Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <div class="flex items-center gap-4">
+        <a href="index.html">
+            <img alt="Springfield Properties Logo" class="w-auto object-contain h-16" src="assets/images/springfield-logo-header.png"/>
+        </a>
+    </div>
+    <h1 class="font-headline-md text-headline-md">CRM Dashboard</h1>
+    <a href="index.html" class="text-slate-text hover:text-muted-gold transition-colors">← Back to Home</a>
+</header>
+
+<div class="pt-32 pb-16 px-margin-desktop">
+    <div class="max-w-max-width mx-auto">
+        <!-- Dashboard Header -->
+        <div class="mb-12">
+            <h2 class="font-headline-lg text-headline-lg mb-2">Lead Management Dashboard</h2>
+            <p class="text-gray-600">Real-time view of all incoming leads and inquiries</p>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="glass-card p-6 rounded-xl border border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2">Total Leads</p>
+                        <p class="font-headline-md text-headline-md text-slate-text">1,247</p>
+                    </div>
+                    <span class="material-symbols-outlined text-muted-gold text-3xl">group</span>
+                </div>
+                <p class="text-xs text-green-600 mt-4">↑ 12% from last month</p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2">This Month</p>
+                        <p class="font-headline-md text-headline-md text-slate-text">342</p>
+                    </div>
+                    <span class="material-symbols-outlined text-muted-gold text-3xl">calendar_month</span>
+                </div>
+                <p class="text-xs text-green-600 mt-4">↑ 8% from previous</p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2">Conversions</p>
+                        <p class="font-headline-md text-headline-md text-muted-gold">89</p>
+                    </div>
+                    <span class="material-symbols-outlined text-muted-gold text-3xl">trending_up</span>
+                </div>
+                <p class="text-xs text-green-600 mt-4">26% conversion rate</p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2">Site Visits Booked</p>
+                        <p class="font-headline-md text-headline-md text-slate-text">156</p>
+                    </div>
+                    <span class="material-symbols-outlined text-muted-gold text-3xl">place</span>
+                </div>
+                <p class="text-xs text-green-600 mt-4">↑ 18% this week</p>
+            </div>
+        </div>
+
+        <!-- Recent Leads Table -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-200 mb-12">
+            <div class="px-8 py-6 border-b border-gray-200 bg-gray-50">
+                <h3 class="font-headline-md text-headline-md">Recent Leads</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Name</th>
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Phone</th>
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Email</th>
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Project</th>
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Source</th>
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Status</th>
+                            <th class="px-8 py-4 text-left font-label-caps text-label-caps text-gray-600">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-8 py-4">
+                                <span class="font-bold text-slate-text">Rajesh Kumar</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">+91 98765 43210</td>
+                            <td class="px-8 py-4 text-gray-600">rajesh.k@email.com</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold">Godrej Woodscapes</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Website</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Qualified</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Today</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-8 py-4">
+                                <span class="font-bold text-slate-text">Priya Sharma</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">+91 87654 32109</td>
+                            <td class="px-8 py-4 text-gray-600">priya.s@email.com</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-bold">Prestige Raintree</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Brochure Download</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold">Follow-up</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Yesterday</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-8 py-4">
+                                <span class="font-bold text-slate-text">Amit Patel</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">+91 76543 21098</td>
+                            <td class="px-8 py-4 text-gray-600">amit.p@email.com</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-bold">Sobha Neopolis</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Site Visit</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Booked</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">2 days ago</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-8 py-4">
+                                <span class="font-bold text-slate-text">Neha Gupta</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">+91 65432 10987</td>
+                            <td class="px-8 py-4 text-gray-600">neha.g@email.com</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-bold">Brigade Valencia</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">WhatsApp</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-bold">New</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">3 days ago</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-8 py-4">
+                                <span class="font-bold text-slate-text">Vikram Singh</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">+91 54321 09876</td>
+                            <td class="px-8 py-4 text-gray-600">vikram.s@email.com</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold">Godrej Woodscapes</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Email Campaign</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Converted</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">1 week ago</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-8 py-4">
+                                <span class="font-bold text-slate-text">Ananya Desai</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">+91 43210 98765</td>
+                            <td class="px-8 py-4 text-gray-600">ananya.d@email.com</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-bold">Prestige Raintree</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">Direct Inquiry</td>
+                            <td class="px-8 py-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold">Pending</span>
+                            </td>
+                            <td class="px-8 py-4 text-gray-600">2 weeks ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Lead Status Breakdown -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Status Distribution -->
+            <div class="glass-card p-8 rounded-2xl border border-gray-200">
+                <h3 class="font-headline-md text-headline-md mb-6">Lead Status Distribution</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">New Leads</span>
+                            <span class="text-sm font-bold text-slate-text">156</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Qualified Leads</span>
+                            <span class="text-sm font-bold text-slate-text">142</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 32%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Follow-up Needed</span>
+                            <span class="text-sm font-bold text-slate-text">89</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-500 h-2 rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Converted</span>
+                            <span class="text-sm font-bold text-slate-text">89</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-muted-gold h-2 rounded-full" style="width: 13%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Interest -->
+            <div class="glass-card p-8 rounded-2xl border border-gray-200">
+                <h3 class="font-headline-md text-headline-md mb-6">Project Interest Distribution</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Godrej Woodscapes</span>
+                            <span class="text-sm font-bold text-slate-text">385 leads</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 38%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Prestige Raintree</span>
+                            <span class="text-sm font-bold text-slate-text">289 leads</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 29%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Sobha Neopolis</span>
+                            <span class="text-sm font-bold text-slate-text">276 leads</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-orange-500 h-2 rounded-full" style="width: 28%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Brigade Valencia</span>
+                            <span class="text-sm font-bold text-slate-text">297 leads</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="py-12 px-margin-desktop border-t border-gray-200 bg-white">
+    <div class="max-w-max-width mx-auto text-center">
+        <p class="text-sm text-gray-600">Springfield Properties CRM Dashboard © 2026. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Add some basic interactivity
+    document.querySelectorAll('tr').forEach(row => {
+        row.addEventListener('click', function() {
+            if (this.closest('tbody')) {
+                // Row selected - placeholder for lead details modal or action
+                const nameElem = this.querySelector('td span');
+                if (nameElem) {
+                    // TODO: open lead detail panel in future
+                    // console output removed for production
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
