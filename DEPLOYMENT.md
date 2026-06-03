@@ -13,7 +13,7 @@ Serving static files:
 - To enable serverless lead capture, add a `api/` serverless function and set `LEADS_API_URL` accordingly.
 
 Cache & headers:
-- Add `vercel.json` with cache headers for static assets; example provided in repo.
+- Add `vercel.json` with cache headers for static assets; example is provided in this repo.
 
 Security:
 - Ensure `CRM_API_KEY` and other secrets are configured in Vercel Dashboard (do not commit secrets to git).
